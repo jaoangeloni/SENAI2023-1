@@ -61,6 +61,19 @@ var clientes = [
     }
 ]
 
+function func(){
+    let select = document.querySelector("select")
+    let nome= select.options[select.selectedIndex].text
+    let data = document.querySelector("#data").value
+    let preco = document.querySelector("#preco").value
+
+    ncliente = new clientes
+
+    nome = ncliente.funcionario
+    data = ncliente.vendas.data
+    preco = ncliente.vendas.valor
+}
+
 var body = document.querySelector("body")
 var table = document.querySelector("table")
 var tbody = document.createElement("tbody")
