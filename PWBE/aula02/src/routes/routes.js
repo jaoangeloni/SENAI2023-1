@@ -3,10 +3,16 @@ const express = require("express");
 const router = express.Router();
 
 const aluno = require("../controllers/aluno")
+const professor = require("../controllers/professor")
 
-router.get("/listar", aluno.listar);
-router.post("/criar", aluno.criar);
-router.put("/atualizar", aluno.atualizar);
-router.delete("/apagar", aluno.apagar);
+router.get("/alunos", aluno.listar);
+router.post("/aluno", aluno.criar);
+router.put("/aluno", aluno.atualizar);
+router.delete("/aluno", aluno.apagar);
+
+router.get("/professores", professor.listar);
+router.post("/professor", professor.criar);
+router.put("/professor", professor.atualizar);
+router.delete("/professor", professor.apagar);
 
 module.exports = router;
