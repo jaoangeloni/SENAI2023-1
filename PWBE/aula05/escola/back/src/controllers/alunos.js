@@ -22,7 +22,7 @@ const cadastrar = (req,res) => {
     let string = `insert into aluno value('${ra}','${nome}','${nascto}',${turma})` 
     con.query(string, (err,result)=>{
         if(err == null)
-            res.status(201).json(result).end()
+            res.redirect('/alunos')
         else
             res.json(err).end()
     })
