@@ -1,3 +1,4 @@
+// const con = require('../dao/connect.js')
 const Aluno = require('../models/aluno')
 
 var alunos = []

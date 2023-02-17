@@ -8,7 +8,7 @@ CREATE TABLE professores(
     especialidade varchar(50) not null
 );
 
-CREATE TABLE alunos(
+CREATE TABLE aluno(
     ra varchar(15) not null PRIMARY KEY,
     nome varchar(50) not null,
     nascto date not null,
@@ -21,7 +21,7 @@ CREATE TABLE turmas(
     sigla varchar(4) not null
 );
 
-ALTER TABLE alunos ADD FOREIGN KEY (id_turma) REFERENCES turmas(id);
+ALTER TABLE aluno ADD FOREIGN KEY (id_turma) REFERENCES turmas(id);
 
 CREATE TABLE leciona(
     id_prof INTEGER NOT NULL,
@@ -43,7 +43,7 @@ INSERT INTO turmas VALUES
 (default, "Eletrônica", "1EA"),
 (default, "Eletrônica", "3EA");
 
-INSERT INTO alunos VALUES
+INSERT INTO aluno VALUES
 ('ra01', "Camacho", "2000-04-02", 1),
 ('ra02', "Karen", "2005-05-12", 1),
 ('ra03', "Cyro", "1984-08-13", 2),
