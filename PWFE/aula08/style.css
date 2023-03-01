@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&family=Inter&family=JetBrains+Mono:wght@100&family=Montserrat&family=Poppins&family=Roboto+Condensed:ital@0;1&family=Sacramento&family=Smooch&family=VT323&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1e/Chicago_city_view.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* backdrop-filter: brightness(70%); */
+}
+#titulo{
+    font-family: 'Sacramento', cursive;
+    font-size: 5rem;
+    margin: 10px;
+    color: white;
+    text-shadow: 0px 3px 0px #ff0073;
+    font-weight: bold;
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    backdrop-filter: blur(70px);
+    padding: 20px;
+    margin-top: 50px;
+}
+input{
+    outline: none;
+    border: none;
+    padding: 10px;
+    width: 300px;
+    height: 50px;
+    font-size: 1rem;
+    border-radius: 50px;
+    background-color: white;
+}
+button{
+    outline: none;
+    border: none;
+    padding: 10px;
+    width: 300px;
+    height: 50px;
+    font-size: 1rem;
+    border-radius: 50px;
+    font-weight: bold;
+    background-color: #ff0073;
+    color: white;
+}
+#bv{
+    font-family: 'Sacramento', cursive;
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0px 3px 0px #ff0073;
+}
