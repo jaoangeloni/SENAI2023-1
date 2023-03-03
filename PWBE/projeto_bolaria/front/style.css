@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background:linear-gradient(to bottom right, #fd6f1d,#fcf345); */
+    /* background-color: #ffe7ba; */
+}
+#welcome{
+    margin: 20px;
+    width: 80%;
+    height: 500px;
+    background-image: url('https://imgs.search.brave.com/k-OGd_qZpyo8UhdLIrcXFzTs_Xmd_CzoGSs3qL-mFUQ/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDQ1MjYy/MTguanBn');
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+}
+.welcome{
+    width: 60%;
+    height: 100%;
+    background-color: #000000ae;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info{
+    font-family: 'Sacramento';
+    font-size: 3rem;
+    font-weight: bold;
+    margin-left: 30px;
+    color: #ffda95;
+    text-shadow: 1.5px 1.5px 0px #ff4d00,
+    -1.5px -1.5px 0px #ff4d00,
+    0 4px 0 #ff6f00;
+    font-style: italic;
+}
+#logo{
+    font-family: 'Sacramento';
+    font-weight: bold;
+    font-size: 6rem;
+    color: #ffda95;
+    text-shadow: 3px 3px 0px #ff4d00,
+    -3px -3px 0px #ff4d00,
+    0 8px 0 #ff6f00;
+    word-spacing: 1px;
+}
+#first{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: start;
+}
+#img{
+    width: 40%;
+    height: 100%;
+    background-color: #000000ae;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+#img img{
+    width: 100%;
+
+}
+
+
+#produto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    width: 80%;
+    height: 200px;
+
+}
