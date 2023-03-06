@@ -6,5 +6,6 @@ const Corretor = require("../controllers/corretor.controller");
 
 router.post("/corretor", Corretor.adicionar);
 router.get("/corretores", Corretor.listar);
+router.post("/login", Corretor.autenticar);
 
 module.exports = router;

@@ -26,7 +26,7 @@ main{
     background-position: top;
     display: flex;
     user-select: none;
-    border: 20px solid #ffa556;
+    border: 20px solid #f99f33;
 }
 .welcome{
     width: 60%;
@@ -85,7 +85,7 @@ main{
     background-image: url('https://cdn.wallpapersafari.com/27/76/JbMcBm.jpg');
     background-size: cover;
     background-position-y: 40%;
-    border: 30px solid #ffa556;
+    border: 30px solid #f99f33;
 }
 #produto div{
     padding: 50px;
@@ -134,7 +134,7 @@ input{
     background-image: url('https://cdn.wallpapersafari.com/27/76/JbMcBm.jpg');
     background-size: cover;
     background-position-y: bottom;
-    border: 30px solid #ffa556;
+    border: 30px solid #f99f33;
 }
 #menu div{
     padding: 50px;
