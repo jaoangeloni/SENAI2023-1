@@ -1,9 +1,9 @@
 const con = require('../dao/connect');
-const Bolo = require('../models/bolo');
+const Suco = require('../models/suco');
 
 const criar = (req,res) => {
-    let bolo = new Bolo(req.body)
-    con.query(bolo.create(), (err, result) => {
+    let suco = new Suco(req.body)
+    con.query(suco.create(), (err, result) => {
         if(err == null)
             res.status(201).end()
         else
@@ -12,16 +12,16 @@ const criar = (req,res) => {
 }
 
 const listar = (req, res) => {
-    let bolo = new Bolo(req.params)
-    con.query(bolo.read(), (err, result) =>{
+    let suco = new Suco(req.params)
+    con.query(suco.read(), (err, result) =>{
         if(err == null)
             res.json(result).end()
     })
 }
 
 const alterar = (req,res) => {
-    let bolo = new Bolo(req.body);
-    con.query(bolo.update(), (err,result) => {
+    let suco = new Suco(req.body);
+    con.query(suco.update(), (err,result) => {
         if(result.affectedRows > 0)
             res.status(202).end()
         else
@@ -30,8 +30,8 @@ const alterar = (req,res) => {
 }
 
 const excluir = (req, res) => {
-    let bolo = new Bolo(req.body)
-    con.query(bolo.delete(), (err, result) => {
+    let suco = new Suco(req.params)
+    con.query(suco.delete(), (err, result) => {
         if (result.affectedRows > 0)
             res.status(204).end()
         else
