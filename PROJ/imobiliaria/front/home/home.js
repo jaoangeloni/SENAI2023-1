@@ -1,10 +1,14 @@
 const body = document.querySelector("body");
 const {imoveis, nome} = JSON.parse(localStorage.getItem("corretor"));
-const comissao = document.querySelector("comissao")
 
 const welcome = document.querySelector("#welcome");
 welcome.innerHTML += nome;
 
+function logoff() {
+    localStorage.removeItem("corretor");
+
+    window.location.href = "../login/index.html";
+}
 
 imoveis.forEach(imovel => {
     createCard(imovel);
