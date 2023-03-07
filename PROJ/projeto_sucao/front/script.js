@@ -41,7 +41,6 @@ function montarTabela(vetor) {
         let col4 = document.createElement('td')
         let col5 = document.createElement('td')
         let del = document.createElement('button')
-        // del.innerHTML = '-----'
         del.setAttribute('onclick', `excluirItem('${e.id}')`)
         col1.innerHTML = e.id
         col2.innerHTML = e.nome
