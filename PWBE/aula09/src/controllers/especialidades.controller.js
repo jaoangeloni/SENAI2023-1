@@ -1,16 +1,16 @@
 const con = require("../dao/connection");
 
 const cadastrar = (req, res) => {
-    let {data} = req.params;
+    const {especialidade} = req.body;
 
-    const query = `INSERT INTO especialidades VALUES (DEFAULT, '${data.especialidade}')`;
+    const query = `INSERT INTO especialidades VALUES (DEFAULT, '${especialidade}')`;
 
     con.query(query, (err, result) => {
         if(err) {
             res.status(500).json({error: "Erro ao cadastrar especialidade"}).end();
         }else {
-            data.id = result.insertId;
-            res.status(201).json(data).end();
+            // data.id = result.insertId;
+            res.status(201).json(result).end();
         }
     });
 };

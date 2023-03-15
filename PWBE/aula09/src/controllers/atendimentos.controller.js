@@ -1,16 +1,15 @@
 const con = require("../dao/connection");
 
 const cadastrar = (req, res) => {
-    let {data} = req.query;
-
-    const query = `INSERT INTO atendimentos VALUES (DEFAULT, '${data.data}', ${data.medico_id}, ${data.paciente_id})`;
+    const {data, medico_id, paciente_id} = req.body;
+    const query = `INSERT INTO atendimentos VALUES (DEFAULT, '${data}', ${medico_id}, ${paciente_id})`;
 
     con.query(query, (err, result) => {
         if(err){
-            res.status(500).json({error: "Erro ao cadastrar atendimento"}).end();
+            res.status(500).json(err).end();
         }else{
-            data.id = result.insertId;
-            res.status(201).json(data).end();
+            // data.id = result.insertId;
+            res.status(201).json(result).end();
         }
     });
 };
@@ -28,9 +27,9 @@ const listar = (req, res) => {
 }
 
 const alterar = (req, res) => {
-    const { data } = req.query;
+    const { data } = req.body;
 
-    const { id } = req.body;
+    const { id } = req.params;
 
     const query = `UPDATE atendimentos SET data = '${data}' WHERE id = ${id}`;
 
@@ -44,7 +43,9 @@ const alterar = (req, res) => {
 }
 
 const remover = (req, res) => {
-    const query = `DELETE FROM atendimentos`;
+    const { id } = req.params;
+
+    const query = `DELETE FROM atendimentos WHERE id = ${id}`;
 
     con.query(query, (err, result) => {
         if(err) {

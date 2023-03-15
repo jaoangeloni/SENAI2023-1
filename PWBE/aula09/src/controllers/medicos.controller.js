@@ -1,22 +1,22 @@
 const con = require("../dao/connection");
 
 const cadastrar = (req, res) => {
-    let {data} = req.body;
+    const {nome, especialidade_id} = req.body;
 
-    const query = `INSERT INTO medico VALUES (DEFAULT, '${data.nome}', ${data.especilidade_id})`;
+    const query = `INSERT INTO medicos VALUES (DEFAULT, '${nome}', ${especialidade_id})`;
 
     con.query(query, (err, result) => {
         if(err) {
             res.status(500).json({error: "Erro ao cadastrar medico"}).end();
         }else{
-            data.id = result.insertId;
-            res.status(200).json(data).end();
+            // data.id = result.insertId;
+            res.status(200).json(result).end();
         }
     });
 };
 
 const listar = (req, res) => {
-    const query = `SELECT m.id, n.nome, e.nome as especialidades FROM medicos m
+    const query = `SELECT m.id, m.nome, e.nome as especialidades FROM medicos m
                     INNER JOIN especialidades e
                     ON e.id = m.especialidade_id`;
 
