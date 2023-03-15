@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#atendimentos">Atendimentos</a></li>
+            <li><a href="#pacientes">Pacientes</a></li>
+            <li><a href="#medicos">Médicos</a></li>
+            <li><a href="#especialidades">Especialidades</a></li>
+        </ul>
+    </header>
+    <section id="home">
+        <div id="container">
+            <div id="intro">
+                <p id="title">Clínica <span id="morre">Morre</span><span id="nunca">Nunca</span></p>
+                <p id="descricao">Somos a clínica número um em salvar vidas!</p>
+                <div id="saibamais">Saiba Mais</div>
+            </div>
+            <div id="img">
+                <img src="assets/Doctor-Free-Download-PNG.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section id="atendimentos">
+        <p class="titulo">Atendimentos</p>
+        <div id="container2">
+                <form id="cadastro">
+                    <p id="agendar">Agendar nova consulta</p>
+                    <br>
+                    <div>
+                        <input type="date" name="data" id="data" required>
+                        <input type="number" name="id_medico" id="id_medico" placeholder="Id do médico">
+                        <input type="number" step="id_paciente" name="id_paciente" id="id_paciente" placeholder="Id do paciente" required >
+                        <input type="submit" value="Agendar" id="butao">
+                    </div>
+                    <br>
+                </form>
+                <br>
+                <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nº</th>
+                        <th>Data</th>
+                        <th>Id do Médico </th>
+                        <th>Id do Paciente</th>
+                        <th class="delete">Excluir</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo"></tbody>
+            </table>
+        </div>
+        </section>
+    </body>
+    <script src="script.js"></script>
+    </html>
