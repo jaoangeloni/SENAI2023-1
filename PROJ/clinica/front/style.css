@@ -1,3 +1,6 @@
+
+/* global ------------------------------------------------------------------------------------------------------------ */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 *{
     margin: 0;
@@ -38,98 +41,13 @@ a:hover{
     color: #BF3530;
     font-weight: bold;
 }
-#home{
-    width: 100vw;
-    height: 100vh;
-    background-image: url('https://codigomed.com/wp-content/uploads/2017/03/estrutura-clinica.jpg');
-    background-size: cover;
-    user-select: none;
-}
-#container{
-    width: 100%;
-    height: 100%;
-    backdrop-filter: grayscale(100%);
-    background: linear-gradient(#fffcf4 30%,#fffcf45f);
-    display: flex;
-}
-#intro{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-#title{
-    font-size: 4rem;
-    font-weight: bold;
-}
-#nunca{
-    color: #4E8864;
-}
-#morre{
-    color: #BF3530;
-}
-#img{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:end;
-}
-#img img{
-    width: 45rem;
-}
-#descricao{
-    font-size: 1.5rem;
-}
-#saibamais{
-    margin: 20px;
-    background-color: #BF3530;
-    color: white;
-    padding: 10px;
-    border-radius: 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-#atendimentos{
-    width: 100vw;
-    height: 100vh;
-    background: #fffcf4;
-    background-image: url('assets/wave.svg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: bottom;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#container2{
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(#fffcf4 30%,#fffcf45f); 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
-}
-.titulo{
-    font-size: 2.2rem;
-    padding: 50px;
-}
-
-
-
-
-
 
 table{
     border-collapse: collapse;
+    border: 1px solid #BF3530;
 }
 tr{
-    background-color: #dcdbd7;
+    background-color: #dddddd;
 }
 tr:nth-child(even){
     background-color: #ffffff;
@@ -161,6 +79,100 @@ td{
 .delete{
     text-align: center;
 }
+input{
+    width: 370px;
+    padding: 10px 0px;
+    font-size: 1rem;
+    border: 1px #BF3530 solid;
+    outline: none;
+    text-align: center;
+}
+#butao{
+    font-weight: bold;
+    color: #ffffff;
+    background-color:#4E8864 ;
+    border: none;
+    cursor: pointer;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(#fffcf4 30%,#fffcf48f);  */
+    background: #fffcf4b4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.model{
+    width: 100vw;
+    height: 100vh;
+    background: #fffcf4;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.titulo{
+    font-size: 2.2rem;
+    padding: 50px;
+}
+
+/* home ------------------------------------------------------------------------------------------------------------ */
+
+#home{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://images.pexels.com/photos/247786/pexels-photo-247786.jpeg?cs=srgb&dl=pexels-pixabay-247786.jpg&fm=jpg');
+    background-position: center;
+    background-size: cover;
+    user-select: none;
+}
+#container{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: grayscale(100%);
+    background: linear-gradient(#fffcf4 30%,#fffcf481);
+    display: flex;
+}
+#intro{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#title{
+    font-size: 4rem;
+    font-weight: bold;
+}
+#nunca{
+    color: #4E8864;
+}
+#morre{
+    color: #BF3530;
+}
+#img{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:end;
+}
+#img img{
+    width: 50rem;
+}
+.descricao{
+    font-size: 1.5rem;
+}
+
+/* atendimentos ------------------------------------------------------------------------------------------------------------ */
+
+#atendimentos{
+    background-image: url('assets/wave.svg');
+}
 #agendar{
     font-size: 1.2rem;
     padding: 5px 10px;
@@ -177,18 +189,21 @@ td{
     justify-content: space-between;
 
 }
-input{
-    width: 370px;
-    padding: 10px 0px;
-    font-size: 1rem;
-    border: 1px #BF3530 solid;
-    outline: none;
-    text-align: center;
+
+/* Pacientes ------------------------------------------------------------------------------------------------------------ */
+
+#pacientes{
+    background-image: url('assets/wave\ \(1\).svg');
 }
-#butao{
-    font-weight: bold;
-    color: #ffffff;
-    background-color:#4E8864 ;
-    border: none;
-    cursor: pointer;
+
+/* Medicos ------------------------------------------------------------------------------------------------------------ */
+
+#medicos{
+    background-image: url('assets/wave\ \(2\).svg');
+}
+
+/* Especialidades ------------------------------------------------------------------------------------------------------------ */
+
+#especialidades{
+    background-image: url('assets/wave\ \(3\).svg');
 }
