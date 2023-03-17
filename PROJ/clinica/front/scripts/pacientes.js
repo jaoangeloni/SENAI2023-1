@@ -45,7 +45,7 @@ function tabelaPaciente(vetor) {
 
         col1.innerHTML = e.id
         col2.innerHTML = e.nome
-        col3.innerHTML = e.data_nascimento
+        col3.innerHTML = new Date(e.data_nascimento).toLocaleDateString('pt-BR')
         col4.appendChild(del)
 
         linha.appendChild(col1)

@@ -45,7 +45,7 @@ function tabelaMedico(vetor) {
 
         col1.innerHTML = e.id
         col2.innerHTML = e.nome
-        col3.innerHTML = e.especialidade_id
+        col3.innerHTML = e.especialidade
         col4.appendChild(del)
 
         linha.appendChild(col1)

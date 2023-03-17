@@ -11,7 +11,7 @@ cadastro_atendimento.addEventListener('submit', e => {
     e.preventDefault();
 
     const body = {
-        "data": cadastro_atendimento.nome.value,
+        "data": cadastro_atendimento.data.value,
         "id_medico": cadastro_atendimento.id_medico.value,
         "id_paciente": cadastro_atendimento.id_paciente.value,
     }
@@ -48,7 +48,7 @@ function tabelaAtendimento(vetor) {
         del.setAttribute('onclick', `excluirItem('${e.id}')`)
 
         col1.innerHTML = e.id
-        col2.innerHTML = e.data
+        col2.innerHTML = new Date(e.data).toLocaleDateString('pt-BR')
         col3.innerHTML = e.medico_id
         col4.innerHTML = e.paciente_id
         col5.appendChild(del)
@@ -68,6 +68,8 @@ function excluirItem(i) {
             .then(resp => resp.status)
             .then(resp => {
                 if (resp == 204) window.location.reload()
+
                 else alert('Erro ao excluir')
         })
 }
+
