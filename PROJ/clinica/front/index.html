@@ -27,7 +27,7 @@
                 <p class="descricao">Jaguariúna - SP</p>
             </div>
             <div id="img">
-                <img src="assets/425px-Dr_Whoa_Medic.png" alt="">
+                <img src="assets/Doctor-Free-Download-PNG.png" alt="">
             </div>
         </div>
     </section>
@@ -36,7 +36,7 @@
     <section id="atendimentos" class="model">
         <p class="titulo">Atendimentos</p>
         <div class="container">
-                <form id="cadastro">
+                <form id="cadastro_atendimento">
                     <p id="agendar">Agendar nova consulta</p>
                     <br>
                     <div>
@@ -59,7 +59,7 @@
                         <th class="delete">Excluir</th>
                     </tr>
                 </thead>
-                <tbody id="corpo"></tbody>
+                <tbody id="corpo_atendimento" class="corpo"></tbody>
             </table>
         </div>
         </section>
@@ -67,20 +67,93 @@
 
         <section id="pacientes" class="model">
             <p class="titulo">Pacientes</p>
-            <div class="container"></div>
+            <div class="container">
+                <form id="cadastro_paciente">
+                    <p id="cadastrar_paciente">Cadastrar novo paciente</p>
+                    <br>
+                    <div>
+                        <input type="text" name="nome_paciente" id="nome_paciente" placeholder="Nome do paciente">
+                        <input type="date" name="data" id="data_nasc" required>
+                        <input type="submit" value="Cadastrar" id="butao">
+                    </div>
+                    <br>
+                </form>
+                <br>
+                <br>
+                <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Data de Nascimento</th>
+                        <th class="delete">Excluir</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo_paciente" class="corpo"></tbody>
+                </table>
+            </div>
         </section>
 
 
         <section id="medicos" class="model">
             <p class="titulo">Médicos</p>
-            <div class="container"></div>
+            <div class="container">
+                <form id="cadastro_medico">
+                    <p id="cadastrar_medico">Cadastrar novo médico</p>
+                    <br>
+                    <div>
+                        <input type="text" name="nome_medico" id="nome_medico" placeholder="Nome do médico" required >
+                        <input type="number"  name="id_esp" id="id_esp" placeholder="Id da Especialização" required >
+                        <input type="submit" value="Cadastrar" id="butao">
+                    </div>
+                    <br>
+                </form>
+                <br>
+                <br>
+                <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>ID da especialização</th>
+                        <th class="delete">Excluir</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo_medico" class="corpo"></tbody>
+                </table>
+            </div>
         </section>
 
         
         <section id="especialidades" class="model">
             <p class="titulo">Especialidades</p>
-            <div class="container"></div>
+            <div class="container">
+                <form id="cadastro_especialidade">
+                    <p id="cadastrar_especialidade">Agendar nova consulta</p>
+                    <br>
+                    <div>
+                        <input type="text" name="nome_especialidade" id="nome_especialidade" placeholder="Nome da especialidade">
+                        <input type="submit" value="Cadastrar" id="butao">
+                    </div>
+                    <br>
+                </form>
+                <br>
+                <br>
+                <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Especialidade</th>
+                        <th class="delete">Excluir</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo_especialidades" class="corpo"></tbody>
+                </table>
+            </div>
         </section>
     </body>
-    <script src="script.js"></script>
+    <script src="./scripts/atendimentos.js"></script>
+    <script src="./scripts/pacientes.js"></script>
+    <script src="./scripts/medicos.js"></script>
+    <script src="./scripts/especialidades.js"></script>
     </html>

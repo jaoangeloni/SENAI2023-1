@@ -67,7 +67,7 @@ td{
     width: 300px;
     font-size: 1.2rem;
 }
-#corpo button{
+.corpo button{
     width: 30px;
     height: 30px;
     background: none;
@@ -163,6 +163,7 @@ input{
 }
 #img img{
     width: 45rem;
+    transform:scaleX(-1);
 }
 .descricao{
     font-size: 1.5rem;
@@ -179,10 +180,10 @@ input{
     background-color: #BF3530;
     color: #ffffff;
 }
-#cadastro{
+#cadastro_atendimento{
     width: 1500px;
 }
-#cadastro div{
+#cadastro_atendimento div{
     width: 100%;
     display: flex;
     align-items: center;
@@ -195,15 +196,63 @@ input{
 #pacientes{
     background-image: url('assets/wave\ \(1\).svg');
 }
+#cadastrar_paciente{
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    background-color: #BF3530;
+    color: #ffffff;
+}
+#cadastro_paciente{
+    width: 1200px;
+}
+#cadastro_paciente div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
 
 /* Medicos ------------------------------------------------------------------------------------------------------------ */
 
 #medicos{
     background-image: url('assets/wave\ \(2\).svg');
 }
+#cadastrar_medico{
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    background-color: #BF3530;
+    color: #ffffff;
+}
+#cadastro_medico{
+    width: 1200px;
+}
+#cadastro_medico div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
 
 /* Especialidades ------------------------------------------------------------------------------------------------------------ */
 
 #especialidades{
     background-image: url('assets/wave\ \(3\).svg');
+}
+#cadastrar_especialidade{
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    background-color: #BF3530;
+    color: #ffffff;
+}
+#cadastro_especialidade{
+    width: 900px;
+}
+#cadastro_especialidade div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
