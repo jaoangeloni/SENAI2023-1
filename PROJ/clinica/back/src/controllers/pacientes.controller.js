@@ -1,15 +1,15 @@
 const con = require("../dao/connection");
 
 const cadastrar = (req, res) => {
-    const {nome, nascimento} = req.body;
+    const {nome, data_nascimento} = req.body;
 
-    const query = `INSERT INTO pacientes VALUES (DEFAULT, '${nome}', '${nascimento}')`;
+    const query = `INSERT INTO pacientes VALUES (DEFAULT, '${nome}', '${data_nascimento}')`;
 
     con.query(query, (err, result) => {
         if(err) {
             res.status(500).json({error: "Erro ao cadastrar paciente"}).end();
         }else {
-            res.status(200).json(result).end();
+            res.status(201).json(result).end();
         }
     });
 };

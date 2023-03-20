@@ -21,11 +21,11 @@ fetch(uri + '/pacientes', { method: 'GET' })
 
     options.body = JSON.stringify(body)
 
-    fetch(uri + '/atendimento', options)
+    fetch(uri + '/paciente', options)
         .then(resp => resp.status)
         .then(resp => {
             if (resp == 201){
-                window.location.href = "#atendimentos"
+                window.location.href = "#pacientes"
                 window.location.reload();
             }
             else alert('Erro ao enviar dados')

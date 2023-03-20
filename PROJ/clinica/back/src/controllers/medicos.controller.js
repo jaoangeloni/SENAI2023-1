@@ -10,13 +10,13 @@ const cadastrar = (req, res) => {
             res.status(500).json({error: "Erro ao cadastrar medico"}).end();
         }else{
             // data.id = result.insertId;
-            res.status(200).json(result).end();
+            res.status(201).json(result).end();
         }
     });
 };
 
 const listar = (req, res) => {
-    const query = `SELECT m.id, m.nome, e.nome as especialidades FROM medicos m
+    const query = `SELECT m.id, m.nome, e.nome as especialidade FROM medicos m
                     INNER JOIN especialidades e
                     ON e.id = m.especialidade_id`;
 

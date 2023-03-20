@@ -42,12 +42,10 @@ function tabelaMedico(vetor) {
         col4.setAttribute("class","delete")
         let del = document.createElement('button')
         del.setAttribute('onclick', `excluirItem('${e.id}')`)
-
+        col4.appendChild(del)
         col1.innerHTML = e.id
         col2.innerHTML = e.nome
         col3.innerHTML = e.especialidade
-        col4.appendChild(del)
-
         linha.appendChild(col1)
         linha.appendChild(col2)
         linha.appendChild(col3)

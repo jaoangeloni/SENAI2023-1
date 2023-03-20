@@ -51,7 +51,7 @@ const remover = (req, res) => {
         if(err) {
             res.status(500).json({error: "Erro ao alterar atendimento"}).end();
         }else {
-            res.status(200).json({message: "Atendimento removido com sucesso"}).end();
+            res.status(204).json({message: "Atendimento removido com sucesso"}).end();
         }
     });
 }

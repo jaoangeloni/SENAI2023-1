@@ -12,8 +12,8 @@ cadastro_atendimento.addEventListener('submit', e => {
 
     const body = {
         "data": cadastro_atendimento.data.value,
-        "id_medico": cadastro_atendimento.id_medico.value,
-        "id_paciente": cadastro_atendimento.id_paciente.value,
+        "medico_id": cadastro_atendimento.id_medico.value,
+        "paciente_id": cadastro_atendimento.id_paciente.value,
     }
 
     const options = {
@@ -67,8 +67,9 @@ function excluirItem(i) {
         fetch(uri + '/atendimento/' + i, { method: 'DELETE' })
             .then(resp => resp.status)
             .then(resp => {
-                if (resp == 204) window.location.reload()
-
+                if (resp == 204){
+                    window.location.reload()
+                }
                 else alert('Erro ao excluir')
         })
 }

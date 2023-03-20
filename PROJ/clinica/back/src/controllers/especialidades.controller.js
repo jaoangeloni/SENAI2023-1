@@ -1,9 +1,9 @@
 const con = require("../dao/connection");
 
 const cadastrar = (req, res) => {
-    const {especialidade} = req.body;
+    const {nome} = req.body;
 
-    const query = `INSERT INTO especialidades VALUES (DEFAULT, '${especialidade}')`;
+    const query = `INSERT INTO especialidades VALUES (DEFAULT, '${nome}')`;
 
     con.query(query, (err, result) => {
         if(err) {

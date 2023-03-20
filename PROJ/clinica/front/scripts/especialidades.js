@@ -10,7 +10,7 @@ fetch(uri + '/especialidades', { method: 'GET' })
     e.preventDefault();
 
     const body = {
-        "especialidade": cadastro_especialidade.nome_especialidade.value,
+        "nome": cadastro_especialidade.nome_especialidade.value,
     }
 
     const options = {
