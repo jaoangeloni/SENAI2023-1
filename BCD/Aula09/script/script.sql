@@ -1,0 +1,66 @@
+DROP DATABASE IF EXISTS alugueis;
+CREATE DATABASE alugueis;
+USE alugueis;
+
+CREATE TABLE clientes(
+    cpf VARCHAR(15) NOT NULL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    rua VARCHAR(100) NOT NULL,
+    bairro VARCHAR(50) NOT NULL,
+    cidade VARCHAR(20) NOT NULL,
+    uf VARCHAR(2) NOT NULL
+);
+
+CREATE TABLE telefones(
+    cpf VARCHAR(15) NOT NULL,
+    telefone VARCHAR(13) NOT NULL,
+    FOREIGN KEY (cpf) REFERENCES clientes(cpf)
+);
+
+CREATE TABLE veiculos(
+    placa VARCHAR(8) NOT NULL PRIMARY KEY,
+    modelo VARCHAR(15) NOT NULL,
+    marca VARCHAR(15) NOT NULL,
+    ano INT NOT NULL
+);
+
+CREATE TABLE alugueis(
+    id_aluguel INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    placa VARCHAR(8) NOT NULL,
+    cpf VARCHAR(15) NOT NULL,
+    observacao VARCHAR(50) NOT NULL,
+    aluguel DATE NOT NULL,
+    devolucao DATE NOT NULL,
+    diaria DECIMAL(5,2) NOT NULL,
+    valor DECIMAL(6,2) NOT NULL,
+    FOREIGN KEY (placa) REFERENCES veiculos(placa),
+    FOREIGN KEY (cpf) REFERENCES clientes(cpf)
+);
+
+LOAD DATA INFILE 'D:/JoaoPedroAngeloniAlvarenga/SENAI2023/BCD/Aula09/cliente.CSV'
+INTO TABLE clientes
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE 'D:/JoaoPedroAngeloniAlvarenga/SENAI2023/BCD/Aula09/telefone.CSV'
+INTO TABLE telefones
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE 'D:/JoaoPedroAngeloniAlvarenga/SENAI2023/BCD/Aula09/veiculo.CSV'
+INTO TABLE veiculos
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE 'D:/JoaoPedroAngeloniAlvarenga/SENAI2023/BCD/Aula09/aluguel.CSV'
+INTO TABLE alugueis
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
