@@ -11,6 +11,16 @@ const app = (req,res) =>{
     })
 } 
 
+const excluir = (req,res) =>{
+    con.query(new Trefa(req.params).del(),(err,result) => {
+        if(result.affectedRows > 0)
+            res.redirect("/")
+        else
+            res.render('erro', {err: err})
+    })
+}
+
 module.exports = {
-    app
+    app,
+    excluir
 }
