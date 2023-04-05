@@ -11,8 +11,17 @@ const app = (req,res) =>{
     })
 } 
 
+const cadastrar = (req,res) => {
+    con.query(new Tarefa(req.body).create(), (err, result) => {
+        if(err == null)
+            res.redirect('/')
+        else
+            res.render("Erro", {err: err})
+    })
+}
+
 const excluir = (req,res) =>{
-    con.query(new Trefa(req.params).del(),(err,result) => {
+    con.query(new Tarefa(req.params).del(),(err,result) => {
         if(result.affectedRows > 0)
             res.redirect("/")
         else
@@ -20,7 +29,18 @@ const excluir = (req,res) =>{
     })
 }
 
+const alterar = (req,res) => {
+    con.query(new Tarefa(req.body).update(), (err, result) => {
+        if (result.affectedRows > 0)
+            res.redirect('/')
+        else 
+            res.render("Erro", {err: err})
+    })
+}
+
 module.exports = {
     app,
-    excluir
+    excluir,
+    cadastrar,
+    alterar
 }
