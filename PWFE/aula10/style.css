@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.card{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+#head h1{
+    font-size: 5rem;
+    font-weight: bold;
+    background: -webkit-linear-gradient(left,#a2ff00, #ff0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#head p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0px 2px 0px black;
+}
+#head input{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+#enviar{
+    width: 20px;
+    height: 20px;
+    background: none;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/45/45537.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+#head{
+    height: 40%;
+    width: 100%;
+    background-image: url('https://www.noaa.gov/media/image_download/8a650749-196b-44c7-842b-3caa64e925d0');
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

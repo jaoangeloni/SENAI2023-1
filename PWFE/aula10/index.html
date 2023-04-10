@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="api.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Climão</title>
+</head>
+<body>
+    <section id="head">
+        <h1>Climão da sua goma!</h1>
+        <p>Digite o nome da cidade</p>
+        <div class="card">
+            <input type="text" name="input" id="input" placeholder="Ex: Jaguariúna">
+            <button onclick="valorInput()" id="enviar"></button>
+        </div>
+    </section>
+    <section id="clima">
+        <h1 id="nomeCidade"></h1>
+        <h3 id="nomeEstado"></h3>
+        <h3 id="nomePais"></h3>
+        <p id="tC"></p>
+        <p id="tF"></p>
+        <p id="localTime"></p>
+    </section>
+</body>
+<script src="script.js"></script>
+</html>
