@@ -8,8 +8,35 @@
 body{
     width: 100vw;
     height: 100vh;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+}
+#header{
+    height: 40%;
+    width: 80%;
+    margin: 20px;
+    border-radius: 20px;
+    background-image: url('assets/BG.jpg');
+    background-size: 48%;
+    animation: bg 120s linear infinite;
+}
+@keyframes bg
+{
+    0%{background-position: 0 0;}
+    100%{background-position: 100vw 0;}
+}
+.container{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: brightness(60%);
+}
 .card{
     width: 100%;
     display: flex;
@@ -19,29 +46,31 @@ body{
     gap: 10px;
 }
 
-#head h1{
-    font-size: 5rem;
-    font-weight: bold;
-    background: -webkit-linear-gradient(left,#a2ff00, #ff0000);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#head p{
-    font-size: 1.5rem;
+#header h1{
+    font-size: 4rem;
     font-weight: bold;
     color: white;
-    text-shadow: 0px 2px 0px black;
+    text-shadow: 0px 3px 3px black;
+    margin: 30px;
 }
-#head input{
+
+#header p{
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0px 2px 2px black;
+}
+#header input{
+    width: 15rem;
     outline: none;
     border: none;
     border-radius: 5px;
-    padding: 10px;
+    padding: 15px 10px;
 }
-#enviar{
+#header button{
     width: 20px;
     height: 20px;
+    padding: 15px;
     background: none;
     background-image: url('https://cdn-icons-png.flaticon.com/512/45/45537.png');
     background-size: contain;
@@ -49,17 +78,42 @@ body{
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
+    filter: invert();
 }
-
-#head{
+#main{
     height: 40%;
-    width: 100%;
-    background-image: url('https://www.noaa.gov/media/image_download/8a650749-196b-44c7-842b-3caa64e925d0');
-    background-size: cover;
-    background-position: center;
-    background-repeat:no-repeat;
+    width: 80%;
+    margin: 20px;
+    border-radius: 20px;
+}
+.cardao{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: brightness(80%);
+    border-radius: 20px;
+    gap: 20px;
+}
+#card1{
+    gap: 5px;
+}
+#card1 div{
+    display: flex;
+    align-items: center;
+    
+}
+#card1 p{
+    font-size: 1.2rem
+}
+#nomeCidade{
+    font-size: 2rem;
+}
+#card1 img{
+    width: 60px;
+}
+#card2{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    font-size: 1.2rem;
+    gap: 5px;
 }

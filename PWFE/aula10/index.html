@@ -7,24 +7,41 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="api.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Climão</title>
+    <title>Clima</title>
 </head>
 <body>
-    <section id="head">
-        <h1>Climão da sua goma!</h1>
-        <p>Digite o nome da cidade</p>
-        <div class="card">
-            <input type="text" name="input" id="input" placeholder="Ex: Jaguariúna">
-            <button onclick="valorInput()" id="enviar"></button>
-        </div>
-    </section>
-    <section id="clima">
-        <h1 id="nomeCidade"></h1>
-        <h3 id="nomeEstado"></h3>
-        <h3 id="nomePais"></h3>
-        <p id="tC"></p>
-        <p id="tF"></p>
-        <p id="localTime"></p>
+    <section id="header">
+        <div class="container">
+            <h1>Descubra o clima da sua goma!</h1>
+            <p>Digite o nome da cidade</p>
+            <div class="card">
+                <input type="text" name="input" id="input" placeholder="Ex: Pindamonhangaba">
+                <button onclick="valorInput()"></button>
+            </div>
+        </section>
+
+        <section id="main">
+            <div class="cardao">
+                <div  id="card1">
+                    <div>
+                        <img src="" alt="" id="icon">
+                        <h1 id="nomeCidade"></h1>
+                    </div>
+                    <div>
+                        <p id="nomeEstado"></p>
+                        <p id="nomePais"></p>
+                    </div>
+                    <p id="localTime"></p>
+                </div>
+                <div id="card2">
+                    <p id="tC"></p>
+                    <p id="tF"></p>
+                    <p id="wind"></p>
+                    <p id="humidity"></p>
+                    <p id="uv"></p>
+                </div>
+
+            </div>
     </section>
 </body>
 <script src="script.js"></script>
