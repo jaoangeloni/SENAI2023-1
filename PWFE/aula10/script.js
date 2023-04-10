@@ -26,7 +26,7 @@ function valorInput() {
               tF.innerHTML = resp.data.current.temp_f + " ° Fahrenheit"
               wind.innerHTML = "Ventos de " + resp.data.current.wind_kph + " Km/H"
               humidity.innerHTML = "Umidade " + resp.data.current.humidity + "%"
-              uv.innerHTML = "Índice UV" + resp.data.current.wind_kph + "%"
+              uv.innerHTML = "Índice UV " + resp.data.current.wind_kph + "%"
               localTime.innerHTML = resp.data.location.localtime
             }   
         });
