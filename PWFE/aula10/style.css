@@ -11,7 +11,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background:linear-gradient(to right bottom, #6b22ac,#ff8248);
+    background:linear-gradient(to right bottom, #300f4d,#7236a7, #e27f51);
+    user-select: none;
 }   
 #header{
     height: 40%;
@@ -87,35 +88,35 @@ body{
     margin: 20px;
     border-radius: 20px;
 }
+#main p{
+    font-size: 1.5rem;
+}
 .cardao{
+    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 20px;
-    backdrop-filter: brightness(60%);
+    backdrop-filter: brightness(140%);
     border-radius: 20px;
-    gap: 20px;
 }
 #card1{
     gap: 5px;
-    padding-right: 20px;
-    border-right: 1px solid black;
+    padding: 50px;
 }
 #card1 div{
     display: flex;
     align-items: center;
 }
-#card1 p{
-    font-size: 1.2rem
-}
 #nomeCidade{
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 #card1 img{
-    width: 60px;
+    width: 50px;
 }
 #card2{
     display: flex;
     flex-direction: column;
     font-size: 1.2rem;
     gap: 5px;
+    padding: 50px;
 }
