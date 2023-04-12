@@ -30,18 +30,8 @@ const listar = (req, res) => {
     })
 }
 
-const excluir = (req, res) => {
-    let item = req.params
-    con.query(query, (err, result) => {
-        if (result.affectedRows > 0)
-            res.status(204).end()
-        else
-            res.status(404).end()
-    })
-}
 
 module.exports = {
     avaliar,
-    listar,
-    excluir
+    listar
 }

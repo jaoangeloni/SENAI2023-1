@@ -3,6 +3,8 @@ const cors = require("cors");
 
 const clienteRoute = require("./src/routes/clienteRoute");
 const avaliacaoRoute = require("./src/routes/avaliacaoRoute");
+const restauranteRoute = require("./src/routes/restauranteRoutes");
+const categoriasRoute = require("./src/routes/categoriasRoutes");
 
 const app = express();
 
@@ -11,6 +13,8 @@ app.use(express.json());
 
 app.use(clienteRoute);
 app.use(avaliacaoRoute);
+app.use(restauranteRoute);
+app.use(categoriasRoute);
 
 app.listen(3000, () => {
     console.log("rodando");
