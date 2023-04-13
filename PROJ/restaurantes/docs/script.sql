@@ -44,7 +44,7 @@ INSERT INTO categorias VALUES
 ("","Marmita");
 
 INSERT INTO restaurantes VALUES
-("","LARICA DE JAPA", 1, "Rua Yakuza,661"),
+("","LARICA DE JAPA", 1, "Rua Yakuza, 661"),
 ("","LARICA DOS CHINA", 2, "Rua Xangai, 42"),
 ("","CARNIFICINA", 3, "Rua dos boi, 23"),
 ("","MARMITONA DE CRIA", 4 , "Centro, 52");

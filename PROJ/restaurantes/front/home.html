@@ -9,12 +9,19 @@
     <script src="api.js"></script>
     <link rel="stylesheet" href="home.css">
 </head>
-<body onload="carregar(), restaurantes(), categorias()">
+<body onload="carregar(), categorias()">
     <header>
-        <h2 id="bemVindo">Olá,   </h2>
         <h1>Matador de Fome</h1>
         <button onclick="logoff()">Log out</button>
     </header>
+
+    <p id="lero">O que quer comer hoje <span id="bemVindo"></span>?</p>
+
+    <main></main>
+
+    <div class="lista"></div>
+    <div class="paginaRestaurante"></div>
+
 </body>
 <script src="home.js"></script>
 </html>

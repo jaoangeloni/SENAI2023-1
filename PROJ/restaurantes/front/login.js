@@ -30,7 +30,7 @@ function login(){
     api.post("/login", data)
     .then(resp => {
         if(data.email != undefined) {
-            localStorage.setItem("cliente", JSON.stringify(data));
+            localStorage.setItem("cliente", JSON.stringify(resp.data));
             window.location.href="home.html";
         }else {
             alert(info.msg);

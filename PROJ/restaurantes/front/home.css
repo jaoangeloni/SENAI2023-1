@@ -6,8 +6,14 @@
     font-family: 'Roboto Condensed', sans-serif;
 }
 body{
+    display: flex;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
+    background-image: url(assets/wave.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    align-items: center;
 }
 header{
     height: 10%;
@@ -28,4 +34,55 @@ header button{
     font-weight: bold;
     cursor: pointer;
     text-decoration: underline;
+}
+
+#lero{
+    font-size: 1.5rem;
+    margin: 20px;
+}
+
+main{
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.categoria{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    padding: 20px 50px;
+    border-radius: 5px;
+    border: #f54254 2px solid;
+    border-bottom: #f54254 6px solid;
+    cursor: pointer;
+}
+
+.lista{
+    border-radius: 5px;
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    backdrop-filter: blur(500px);
+}
+
+.lista p{
+    font-size: 1.5rem;
+}
+
+.restaurante{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    display: flex;
+    background-color: white;
+    border-bottom: #f54254 2px solid;
+    padding: 10px;
 }
