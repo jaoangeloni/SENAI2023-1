@@ -19,9 +19,19 @@
 
     <main></main>
 
-    <div class="lista"></div>
-    <div class="paginaRestaurante"></div>
+    <div class="lista" id="lista" ></div>
 
+    <div class="listaCardapio sumiu" id="listaCardapio"></div>
+
+    <div class="avaliacao sumiu" id="formAvaliacao">
+        <p>Avaliação: </p>
+        <input type="number" max="10" min="0" id="nota" name="nota" placeholder="Nos dê uma nota de 0 a 10">
+        <input type="text" id="descricao" name="descricao" placeholder="Complemento">
+        
+        <button onclick="avaliar()" id="butao">Enviar</button>
+    </div>
+
+    <div class="avaliacoes sumiu" id="avaliacoes"></div>
 </body>
 <script src="home.js"></script>
 </html>

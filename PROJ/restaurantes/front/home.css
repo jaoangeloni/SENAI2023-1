@@ -9,11 +9,9 @@ body{
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
-    background-image: url(assets/wave.svg);
-    background-repeat: no-repeat;
-    background-position: bottom;
+    overflow-x: hidden;
     align-items: center;
+    padding-bottom: 100px;
 }
 header{
     height: 10%;
@@ -54,9 +52,32 @@ main{
     justify-content: center;
     font-size: 1.5rem;
     padding: 20px 50px;
+    background:linear-gradient(to right bottom,white,#f4a2aa);
     border-radius: 5px;
-    border: #f54254 2px solid;
-    border-bottom: #f54254 6px solid;
+    border: 1px solid #f54254;
+    cursor: pointer;
+}
+
+.lista p{
+    font-size: 1.5rem;
+}
+
+.restaurante{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    background-color: white;
+    border-bottom: #f54254 2px solid;
+    padding: 10px;
+}
+.cardapio{
+    background-color: #f54254;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2rem;
     cursor: pointer;
 }
 
@@ -70,19 +91,93 @@ main{
     gap: 20px;
     padding: 20px;
     backdrop-filter: blur(500px);
+    background-color: #f4a2aa;
 }
 
-.lista p{
+.listaCardapio{
+    border-radius: 5px;
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    backdrop-filter: blur(500px);
+    background-color: #f4a2aa;
+}
+
+.listaCardapio p{
     font-size: 1.5rem;
 }
 
-.restaurante{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+#fechar{
+    position: absolute;
+    right: 2%;
+    top: 5%;
+    font-weight: bold;
     cursor: pointer;
-    display: flex;
-    background-color: white;
-    border-bottom: #f54254 2px solid;
+}
+
+#avaliacao{
+    border: none;
+    outline: none;
     padding: 10px;
+    font-size: 1.5rem;
+    background-color: #f54254;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.avaliacao{
+    border-radius: 5px;
+    width: 80%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    backdrop-filter: blur(500px);
+    background-color: #f4a2aa;
+    margin: 10px;
+    font-size: 1.2rem;
+}
+
+.avaliacao input{
+    padding: 10px;
+    width: 20%;
+    outline: none;
+}
+
+#butao{
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: #f54254;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.avaliacoes{
+    border-radius: 5px;
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    backdrop-filter: blur(500px);
+    background-color: #f4a2aa;
+    margin: 10px;
+    font-size: 1.2rem;
+}
+.sumiu{
+    display: none;
 }

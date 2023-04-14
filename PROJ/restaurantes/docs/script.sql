@@ -38,19 +38,35 @@ CREATE TABLE avaliacao(
 );
 
 INSERT INTO categorias VALUES
-("","Japonesa"),
-("","Chinesa"),
-("","Hambúrguer"),
+("","Pizzas"),
+("","Lanches"),
+("","Japa"),
 ("","Marmita");
 
 INSERT INTO restaurantes VALUES
-("","LARICA DE JAPA", 1, "Rua Yakuza, 661"),
-("","LARICA DOS CHINA", 2, "Rua Xangai, 42"),
-("","CARNIFICINA", 3, "Rua dos boi, 23"),
-("","MARMITONA DE CRIA", 4 , "Centro, 52");
+("","Pizzaria Terra Nostra", 1, "Rua Yakuza, 661"),
+("","Pizzaria Latitude", 1, "Rua Yakuza, 660"),
+("","Gauchos Burger", 2, "Rua Xangai, 42"),
+("","Mc'Donalds", 2, "Rua Xangai, 41"),
+("","Ryoshi", 3, "Rua dos boi, 23"),
+("","Japones", 3, "Rua dos boi, 22"),
+("","Gauchos Marmita", 4 , "Centro, 52"),
+("","Restaurante da Fran", 4 , "Centro, 51");
 
 INSERT INTO cardapio VALUES
-("", 1, "SUSHI MATA FOME", 29.99),
-("", 2, "PASTEL DE CARNE SUSPEITA", 5.99),
-("", 3, "HAMBURGUER DE POMBA", 29.99),
-("", 4, "MARMITA COMPLETA", 10.99);
+("", 1, "Pizza Gigantesca", 29.99),
+("", 1, "Pizza Peqenininha", 19.99),
+("", 2, "Pizza Gigantesca", 29.99),
+("", 2, "Pizza Peqenininha", 19.99),
+("", 3, "Lanche Gigantesco", 35.99),
+("", 3, "Lanche Pequeninin", 15.99),
+("", 4, "Lanche Gigantesco", 35.99),
+("", 4, "Lanche Pequeninin", 15.99),
+("", 5, "Temaki", 15.99),
+("", 5, "Sashimi", 15.99),
+("", 6, "Temaki", 15.99),
+("", 6, "Sashimi", 15.99),
+("", 7, "Marmita Pedreiro", 15.99),
+("", 7, "Marmita Criança", 10.99),
+("", 8, "Marmita Pedreiro", 15.99),
+("", 8, "Marmita Criança", 10.99);      

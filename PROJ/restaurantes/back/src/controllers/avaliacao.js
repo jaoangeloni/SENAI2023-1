@@ -30,8 +30,37 @@ const listar = (req, res) => {
     })
 }
 
+const filtrar = (req, res) => {
+    const { id } = req.params;
+
+    let query = `SELECT * FROM avaliacao WHERE restauranteId = '${id}'`;
+
+    con.query(query, (err, response) => {
+        if(err == undefined) {
+            res.status(200).json(response).end();
+        }else {
+            res.status(400).json(err).end();
+        }
+    });
+}
+
+const filtrarCliente = (req, res) => {
+    const { id } = req.params;
+
+    let query = `SELECT * FROM avaliacao WHERE clienteId = '${id}'`;
+
+    con.query(query, (err, response) => {
+        if(err == undefined) {
+            res.status(200).json(response).end();
+        }else {
+            res.status(400).json(err).end();
+        }
+    });
+}
 
 module.exports = {
     avaliar,
-    listar
+    listar,
+    filtrar,
+    filtrarCliente
 }
