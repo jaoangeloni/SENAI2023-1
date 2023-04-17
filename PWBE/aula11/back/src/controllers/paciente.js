@@ -1,62 +1,56 @@
-const con = require("../DAO/connect");
+const con = require('../DAO/connect')
+const Paciente = require('../models/paciente')
 
-const cadastrar = (req, res) => {
-    const {nome, nascimento, peso, altura } = req.body;
+const modelarLista = (lista) => {
+    for(i = 0; i < lista.length; i++)
+        lista[i] = new Paciente(lista[i])
+    return lista
+}
 
-    const query = `INSERT INTO pacientes VALUES (DEFAULT, '${nome}', '${nascimento}', ${peso}, ${altura}, "", "", "")`;
 
-    con.query(query, (err, result) => {
-        if(err){
-            res.status(500).json(err).end();
-        }else{
-            res.status(201).json(result).end();
+const criar = (req, res) => {
+    let paciente = new Paciente(req.body)
+    con.query(paciente.create(), (err, result) => {
+        if (err == null)
+            res.status(201).end()
+        else
+            res.status(500).json(err).end()
+    })
+}
+
+const listar = async (req, res) => {
+    let paciente = new Paciente(req.params)
+    con.query(paciente.read(), (err, result) => {
+        if (err == null){
+            res.json(modelarLista(result)).end()
         }
-    });
-};
-
-const listar = (req, res) => {
-    const {nome, nascimento, peso, altura } = req.query;
-    const query = `SELECT '${nome}' FROM pacientes`;
-
-    con.query(query, (err, result) => {
-        if(err) {
-            res.status(500).json({error: "Erro ao listar atendimentos"}).end();
-        }else {
-            res.status(200).json(result).end();
-        }
-    });
+    })
 }
 
 const alterar = (req, res) => {
-    const { nome, nascimento, peso, altura } = req.body;
-    const { id } = req.params;
-    const query = `UPDATE pacientes SET nome = "${nome}", nascimento = "${nascimento}", peso = ${peso}, altura = ${altura} WHERE id = ${id}`;
-    con.query(query, (err, result) => {
-        if(err) {
-            res.status(500).json({error: "Erro ao alterar atendimento"}).end();
-        }else {
-            res.status(200).json({message: "Atendimento alterado com sucesso"}).end();
-        }
-    });
+    let paciente = new Paciente(req.body)
+    con.query(paciente.update(), (err, result) => {
+        if (result.affectedRows > 0)
+            res.status(202).end()
+        else
+            res.status(404).end()
+    })
 }
 
-const remover = (req, res) => {
-    const { id } = req.params;
-
-    const query = `DELETE FROM pacientes WHERE id = ${id}`;
-
-    con.query(query, (err, result) => {
-        if(err) {
-            res.status(500).json({error: "Erro ao alterar atendimento"}).end();
-        }else {
-            res.status(204).json({message: "Atendimento removido com sucesso"}).end();
-        }
-    });
+const excluir = (req, res) => {
+    let paciente = new Paciente(req.params)
+    con.query(paciente.delete(), (err, result) => {
+        if (result.affectedRows > 0)
+            res.status(204).end()
+        else
+            res.status(404).end()
+    })
 }
+
 
 module.exports = {
-    cadastrar,
-    alterar,
+    criar,
     listar,
-    remover
+    alterar,
+    excluir
 }

@@ -1,9 +1,10 @@
 const mysql = require('mysql')
 
 const con = mysql.createConnection({
-    user: 'root',
-    host: 'localhost',
-    database: 'clinica'
+    host: process.env.HOST || 'localhost',
+    database: process.env.DATABASE || 'clinica',
+    user: process.env.USER || 'root',
+    timezone: process.env.TMZ || 'utc'
 });
 
 module.exports = con;

@@ -1,15 +1,14 @@
-const express = require("express");
-const cors = require("cors");
 
-const PacientesRouter = require("./src/routes/paciente");
+const express = require('express')
+const cors = require('cors')
 
-const app = express();
+const router = require('./src/routes/paciente')
 
-app.use(cors());
-app.use(express.json());
-
-app.use(PacientesRouter);
+const app = express()
+app.use(express.json())
+app.use(cors())
+app.use('/', router)
 
 app.listen(3000, () => {
-  console.log("Rodando lisin");
-});
+    console.log("Respondendo na porta 3000")
+})

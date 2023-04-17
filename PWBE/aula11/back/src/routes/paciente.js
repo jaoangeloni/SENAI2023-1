@@ -1,12 +1,12 @@
-const express = require('express');
-
-const Pacientes = require('../controllers/paciente');
-
+const express = require("express");
 const router = express.Router();
 
-router.post('/paciente', Pacientes.cadastrar);
-router.get('/pacientes', Pacientes.listar);
-router.put('/pacientes/:id', Pacientes.alterar);
-router.delete('/paciente/:id', Pacientes.remover);
+const Paciente = require('../controllers/paciente');
 
-module.exports = router;
+router.post('/criar', Paciente.criar);
+router.get('/listar', Paciente.listar);
+router.get('/listar/:id', Paciente.listar);
+router.put('/alterar', Paciente.alterar);
+router.delete('/excluir/:id', Paciente.excluir);
+
+module.exports = router
