@@ -8,8 +8,9 @@ CREATE TABLE funcionarios(
     data_admissao DATE NOT NULL,
     salario DECIMAL(6,2) NOT NULL,
     data_pagto DATE NOT NULL,
-    desempenho DECIMAL (3,1) NOT NULL
+    desempenho DECIMAL (3,1) NOT NULL,
+    bonificacao DECIMAL (3,1)
 );
 
 INSERT INTO funcionarios VALUES
-("", "CARLINHO RUINDADE PURA", "2005-03-16", 2050.50 , CURDATE(), 10);
+("", "CARLINHO RUINDADE PURA", "2005-03-16", 2050.50 , CURDATE(), 10, "");
