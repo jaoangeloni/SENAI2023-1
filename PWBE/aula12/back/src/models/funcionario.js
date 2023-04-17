@@ -7,15 +7,14 @@ class Funcionario {
         this.salario = i.salario
         this.data_pagto = i.data_pagto
         this.desempenho = i.desempenho
+        this.bonificacao = i.bonificacao    
 
         let ano_admissao = new Date(this.data_admissao).getFullYear()
         let ano_atual = new Date().getFullYear()
         
-        i.bonificacao =  this.desempenho * (ano_atual - ano_admissao) * (this.salario * 0.02);
+        this.bonificacao =  this.desempenho * (ano_atual - ano_admissao) * (this.salario * 0.02);
 
-        this.bonificacao = i.bonificacao    
     }
-
     create() {
         return `INSERT INTO funcionarios VALUE(default,'${this.nome_completo}','${this.data_admissao}',${this.salario}, CURDATE(),${this.desempenho}. ${this.bonificacao})`
     }
@@ -33,10 +32,6 @@ class Funcionario {
 
     delete() {
         return `DELETE FROM funcionarios WHERE matricula = ${this.matricula}`
-    }
-
-    bonificacao() {
-        this.bonificacao = this.desempenho * (this.salario * 0.02);
     }
 
 }
