@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed';
+
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background:linear-gradient(to right bottom, #300440,#44005c);   
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow-x: hidden;
+}
+header{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    font-size: 3rem;
+    color: #f22775;
+}
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    gap: 20px;
+}
+
+.cadastro{
+    width: 100%;
+    backdrop-filter: brightness(80%);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #f22775;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.cadastro p{
+    font-size: 2rem;
+    color: #f22775;
+    margin-bottom: 20px;
+}
+.cadastro label{
+    font-size: 1.2rem;
+    color: #ffff;
+}
+.cadastro input{
+    padding: 10px;
+    outline: none;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+}
+.cadastro button{
+    font-size: 1.2rem;
+    padding: 10px;
+    outline: none;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f22775;
+    cursor: pointer;
+    font-weight: bold;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th{
+    background-color: #f22775;
+    padding: 5px;
+    width: 200px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+td{
+    background-color: white;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 5px solid #f22775;
+}
+
+#apagar{
+    background: none;
+    background-image: url("https://cdn-icons-png.flaticon.com/512/542/542724.png");
+    background-size: cover;
+    border: none;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.title{
+    font-size: 1.5rem;
+    color: #f22775;
+}
+@media (max-width: 1060px ){
+    body{
+        height: 100vh;
+    }
+    header{
+        font-size: 3rem;
+    }
+    main{
+        padding: 20px;
+    }
+    .cadastro{
+        flex-direction: column;
+    }
+    .title{
+        font-size: 1.2rem;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th{
+        background-color: #f22775;
+        padding: 5px;
+        text-align: center;
+        font-size: 1rem;
+    }
+    td{
+        background-color: white;
+        padding: 5px;
+        text-align: center;
+        border-bottom: 5px solid #f22775;
+        font-size: 1rem;
+    }
+    #apagar{
+        width: 20px;
+        height: 20px;
+    }
+}
+@media (max-width: 600px ){
+    body{
+        height: 100vh;
+    }
+    header{
+        font-size: 2.5rem;
+    }
+    main{
+        padding: 20px;
+    }
+    .cadastro{
+        flex-direction: column;
+    }
+    .title{
+        font-size: 1.2rem;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th{
+        padding: 5px;
+        text-align: center;
+        font-size: 0.6rem;
+    }
+    td{
+        padding: 5px;
+        text-align: center;
+        font-size: 0.6rem;
+    }
+    #apagar{
+        width: 10px;
+        height: 10px;
+    }
+}

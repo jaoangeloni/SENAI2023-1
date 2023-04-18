@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínicas Skypiea</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="api.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <p>Clínicas Skypiea</p>
+    </header>
+    <main>
+        <p class="title">Cálculo de IMC dos pacientes</p>
+        <div class="cadastro">
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" placeholder="Nome" required>
+            <label for="data">Nascimento:</label>
+            <input type="date" id="data" name="data" required>
+            <label for="peso">Peso:</label>
+            <input type="number" id="peso" name="peso" placeholder="Peso" min="0" required>
+            <label for="altura">Altura:</label>
+            <input type="number" id="altura" name="altura" placeholder="Altura" min="0" required>
+            <button onclick="calcular()">Calcular</button>
+        </div>
+        <p class="title" >Tabela de funcionários</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Nascimento</th>
+                    <th>Peso</th>
+                    <th>Altura</th>
+                    <th>Idade</th>
+                    <th>IMC</th>
+                    <th>Diagnóstico</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody id="tabela"></tbody>
+        </table>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
