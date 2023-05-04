@@ -1,22 +1,21 @@
 import React from 'react';
 import { View, FlatList, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
-import Mock from '../mocks/mocks'
-import ItemTipo from '../components/itemTipo'
+import ItemCurso from '../components/itemCurso'
 
-export default function tipoScreen({ navigation }) {
-
+export default function cursoScreen({ navigation, route }) {
+    const dados = route.params.dados.cursos
+    
     const abrirDetalhes = (dados) => {
-        navigation.navigate('Cursos', { dados });
+        navigation.navigate('Detalhes', { dados });
     }
 
     return (
         <View style={styles.container}>
-            <Image style={styles.logo} source={require('../../assets/logo.png')}/>
             <FlatList
-                data={Mock}
+                data={dados}
                 style={styles.list}
                 renderItem={({ item }) => <TouchableOpacity style={styles.item} onPress={() => abrirDetalhes(item)}>
-                    <ItemTipo item={item} />
+                    <ItemCurso item={item} />
                 </TouchableOpacity>}
             />
         </View >);

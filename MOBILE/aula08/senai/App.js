@@ -1,7 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ClientesScreeen from './source/screens/ClientesScreen';
-import DetalhesScreen from './source/screens/DetalhesScreen';
+import tiposCurso from './source/screens/tiposCurso';
+import listaCursos from './source/screens/listaCursos';
+import detalhesCursos from './source/screens/detalhesCursos';
 
 const Stack = createNativeStackNavigator();
 
@@ -10,13 +11,17 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="ClientesScreeen"
-          component={ClientesScreeen}
-          options={{ title: 'Lista de Clientes' }} />
+          name="tiposCurso"
+          component={tiposCurso}
+          options={{ title: 'Categorias de curso' }} />
+        <Stack.Screen
+          name="Cursos"
+          component={listaCursos}
+          options={{ title: 'Cursos' }} />
         <Stack.Screen
           name="Detalhes"
-          component={DetalhesScreen}
-          options={{ title: 'Detalhes do Cliente' }} />
+          component={detalhesCursos}
+          options={{ title: 'Detalhes' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
