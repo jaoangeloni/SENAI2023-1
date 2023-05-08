@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, FlatList, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import { View, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import ItemCurso from '../components/itemCurso'
 
 export default function cursoScreen({ navigation, route }) {

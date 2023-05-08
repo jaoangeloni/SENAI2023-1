@@ -1,39 +1,57 @@
 import React from 'react';
-import { View, FlatList, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
-import ItemDetalhe from '../components/itemDetalhe'
+import { View, StyleSheet, Text} from 'react-native';
 
-export default function detalheScreen({ navigation, route }) {
+export default function detalheScreen({route}) {
     const dados = route.params.dados.detalhes
-    console.log(dados)
+
     return (
         <View style={styles.container}>
-            <FlatList
-                data={dados}
-                style={styles.list}
-                renderItem={({ item }) => <TouchableOpacity style={styles.item}>
-                    <ItemDetalhe item={item}/>
-                </TouchableOpacity>}
-            />
+            <View style={styles.box}>
+                    <Text style={styles.texto}>
+                        <Text style={styles.bold}>Area: </Text>
+                        {dados.area}</Text>
+                    <Text style={styles.texto}>
+                        <Text style={styles.bold}>Carga: </Text> 
+                        {dados.carga}</Text>
+                    <Text style={styles.texto}>
+                        <Text style={styles.bold}>Telefone: </Text>  
+                        {dados.telefone}</Text>
+                    <Text style={styles.texto}>
+                        <Text style={styles.bold}>Email: </Text>  
+                        {dados.email}</Text>
+            </View>
+            <View style={styles.box}>
+                <Text style={styles.texto}>
+                <Text style={styles.bold}>Descrição: </Text>
+                    {dados.descricao}</Text>
+            </View>
+            <View style={styles.box}>
+                <Text style={styles.texto}>
+                <Text style={styles.bold}>Mais informações em: </Text> 
+                https://jaguariuna.sp.senai.br/</Text> 
+            </View>
         </View >);
 };
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    list: {
-        width: '100%',
-        paddingHorizontal: 20,
-    },
-    item: {
-        flex: 1,
-        flexDirection: 'row',
-    },
-    logo: {
-        width: '90%',
+        alignItems: "center",
         height: 100,
-        margin: 20
+        padding: 15,
+        gap: 10
+    },
+    box: {
+        width:"100%",
+        backgroundColor: "#fff",
+        borderBottomColor: "red",
+        borderBottomWidth: 2,
+        padding: 15
+    },
+    texto: {
+        fontSize: 16,
+    },
+    bold:{
+        fontWeight: "bold"
     }
 });
