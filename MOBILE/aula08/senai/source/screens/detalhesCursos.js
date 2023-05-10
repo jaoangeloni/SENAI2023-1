@@ -7,6 +7,9 @@ export default function detalheScreen({route}) {
     return (
         <View style={styles.container}>
             <View style={styles.box}>
+                <Text style={styles.titulo}>{dados.nome}</Text>
+            </View>
+            <View style={styles.box}>
                     <Text style={styles.texto}>
                         <Text style={styles.bold}>Area: </Text>
                         {dados.area}</Text>
@@ -27,8 +30,8 @@ export default function detalheScreen({route}) {
             </View>
             <View style={styles.box}>
                 <Text style={styles.texto}>
-                <Text style={styles.bold}>Mais informações em: </Text> 
-                https://jaguariuna.sp.senai.br/</Text> 
+                <Text style={styles.bold}>Saiba mais: </Text> 
+                {dados.site}</Text> 
             </View>
         </View >);
 };
@@ -53,5 +56,9 @@ const styles = StyleSheet.create({
     },
     bold:{
         fontWeight: "bold"
+    },
+    titulo: {
+        fontSize: 22,
+        fontStyle: 'italic' 
     }
 });
