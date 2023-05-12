@@ -21,8 +21,13 @@ INSERT INTO Itens_Pedido(pedido_id, pizza_id, quantidade, valor) VALUES
 
 CALL atualizaValorPedido(28);
 
-CREATE PROCEDURE pedidoItem(cliente_id int, pizza_id int, quantidade int)
-    INSERT INTO Pedidos(cliente_id, data, hora) VALUES
-    (cliente_id,DATE_SUB(curdate(),INTERVAL 10 DAY), NOW());
-    INSERT INTO Itens_Pedido(pedido_id, pizza_id, quantidade, valor) VALUES
-    (pedido_id, pizza_id ,quantidade, (select valor from Pizzas where pizza_id = pizza_id));
+CREATE PROCEDURE pedidoItem(cli_id int, pi_id int, qtd int)
+    DELIMITER $
+    BEGIN
+        INSERT INTO Pedidos(cliente_id, data, hora) VALUES
+        (cli_id,DATE_SUB(curdate(),INTERVAL 10 DAY), NOW());
+        INSERT INTO Itens_Pedido(pedido_id, pizza_id, quantidade, valor) VALUES
+        (pedido_id, pi_id ,qtd, (select valor from Pizzas where pizza_id = pi_id));
+    END $
+
+CALL atualizaValorPedido(28);
