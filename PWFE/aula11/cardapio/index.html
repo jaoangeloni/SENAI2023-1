@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cardápio</title>
+</head>
+<body onload="preecherTabela()">
+    <header>
+        <div>
+            <p id="title">Pizzaria Kemario</p>
+            <p id="subtitle">A melhor que tá tendo!</p>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../cardapio/index.html">Cardápio</a></li>
+            <li><a href="../carrinho/index.html">Carrinho</a></li>
+            <li><a href="../pedidos/index.html">Pedidos</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="container">
+            <h1 id="main-title">Cardapio</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Detalhes</th>
+                    </tr>
+                </thead>
+                <tbody id="tcorpo">
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <div id="detalhes" class="modal oculto">
+        <div class="corpoModal">
+            <h1>Detalhes</h1>
+            <div>
+                <p id="id"></p>
+                <p id="nome"></p>
+                <p id="descricao"></p>
+                <p id="preco"></p>
+                <button id="">Adicionar ao Carrinho</button>
+            </div>
+            <button id="btFechar">Fechar</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

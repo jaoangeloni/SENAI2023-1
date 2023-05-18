@@ -93,5 +93,16 @@ class Composite extends Componente {
 
 const composicao = new Composite(Compras[0]);
 composicao.add(new Folha(Parcelas[0]));
-
 composicao.print();
+
+const composicao1 = new Composite(Compras[1]);
+composicao1.add(new Folha(Parcelas[1]));
+composicao1.print();
+
+const composicao2 = new Composite(Compras[2]);
+composicao2.add(new Folha(Parcelas[2]));
+composicao2.print();
+
+const composicao3 = new Composite(Compras[3]);
+composicao3.add(new Folha(Parcelas[3]));
+composicao3.print();
