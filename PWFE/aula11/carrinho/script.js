@@ -9,20 +9,22 @@ function preencherTabela() {
         const nome = document.createElement("td");
         const preco = document.createElement("td");
         const enviar = document.createElement("td")
+        const remover = document.createElement("td")
         id.innerHTML = e.id;
         nome.innerHTML = e.nome;
         preco.innerHTML = e.preco;
         enviar.innerHTML = `<button onclick="enviarPedido('${i}')">Confirmar pedido</button>`;
+        remover.innerHTML = `<button onclick="removerItem('${i}')">Remover pedido</button>`;
         linha.appendChild(id);
         linha.appendChild(nome);
         linha.appendChild(preco);
         linha.appendChild(enviar);
+        linha.appendChild(remover);
         tcorpo.appendChild(linha)
     })
 }
 
 function enviarPedido(i) {
-    
     const confirma = confirm("Enviar pedido?")
     if (confirma == true){
         const item = {
@@ -41,6 +43,18 @@ function enviarPedido(i) {
 }
 
 function limparDados(){
-    window.localStorage.removeItem("produtos");
-    window.location.reload();
+    const confirma = confirm("Limpar carrinho completo?")
+    if (confirma == true){
+        window.localStorage.removeItem("produtos");
+        window.location.reload();
+    }
+}
+
+function removerItem(i){
+    const confirma = confirm("Excluir do carrinho?")
+    if (confirma == true){
+        produtos.splice(i, 1)
+        window.localStorage.setItem("produtos",JSON.stringify(produtos))
+        window.location.reload()
+    }
 }

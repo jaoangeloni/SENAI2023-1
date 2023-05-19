@@ -11,11 +11,8 @@ function preencherTabela() {
         const preco = document.createElement("td")
         const detalhes = document.createElement("td");
         id.innerHTML = e.id;
-        id.id = "id"
         nome.innerHTML = e.nome;
-        nome.id = "nome"
         preco.innerHTML = e.preco
-        preco.id = "preco"
         detalhes.innerHTML = `<button onclick="abrirModal('${i}')">Ver detalhes</button>`;
         linha.appendChild(id);
         linha.appendChild(nome);

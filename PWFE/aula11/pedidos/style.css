@@ -71,17 +71,18 @@ main{
     flex-direction: column;
     background-image: url('https://images7.alphacoders.com/328/328730.jpg');
     background-size: cover;
-    height: fit-content
+    height: 100%
 }
 #container{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
     padding: 10px;
     width: 100%;
     height: 100%;
     background-color: #ffffff6a;
+    gap: 20px;
 }
 #main-title{
     font-family: 'Raleway', sans-serif;
@@ -91,4 +92,27 @@ main{
     color: #fff;
     text-shadow: -2px 2px 0 #ff3e3e;
     margin: 20px;
+}
+.card{
+    background-color: #fff;
+    width: 50%;
+    /* border-radius: 5px; */
+    gap: 5px;
+    padding: 10px;
+    border-bottom: 5px #ff3e3e solid;
+}
+.card p{
+    font-size: 1.5rem;
+    font-style: italic;
+}
+#limpar{
+    margin: 10px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    background-color: #ff3e3e ; 
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
 }
