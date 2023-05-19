@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="style.css">
     <title>Cardápio</title>
 </head>
-<body onload="preecherTabela()">
+<body onload="preencherTabela()">
     <header>
         <div>
-            <p id="title">Pizzaria Kemario</p>
+            <p id="title">Pizzaria Kimario</p>
             <p id="subtitle">A melhor que tá tendo!</p>
         </div>
     </header>
@@ -40,15 +40,16 @@
     </main>
     <div id="detalhes" class="modal oculto">
         <div class="corpoModal">
-            <h1>Detalhes</h1>
             <div>
+                <h1>Detalhes</h1>
+                <button id="btFechar">X</button>
+
+            </div>
                 <p id="id"></p>
                 <p id="nome"></p>
                 <p id="descricao"></p>
                 <p id="preco"></p>
-                <button id="addCarrinho" onclick="addCarrinho()">Adicionar ao Carrinho</button>
-            </div>
-            <button id="btFechar">X</button>
+                <button id="addCarrinho" onclick="adicionar()">Adicionar ao Carrinho</button>
         </div>
     </div>
 </body>

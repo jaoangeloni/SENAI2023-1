@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="style.css">
     <title>Carrinho</title>
 </head>
-<body>
+<body onload="preencherTabela()">
     <header>
         <div>
-            <p id="title">Pizzaria Kemario</p>
+            <p id="title">Pizzaria Kimario</p>
             <p id="subtitle">A melhor que tá tendo!</p>
         </div>
     </header>
@@ -23,7 +23,20 @@
     </nav>
     <main>
         <div id="container">
-            <h1 id="main-title">Carrinho</h1>
+            <table>
+                <h1 id="main-title">Carrinho</h1>
+                <thead>
+                    <tr>
+                        <th>Seus pedidos</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tcorpo">
+                </tbody>
+            </table>
+            <button onclick="limparDados()" id="limpar">Limpar carrinho</button>
         </div>    
     </main>
 </body>

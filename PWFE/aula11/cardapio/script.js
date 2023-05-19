@@ -2,11 +2,8 @@ const tcorpo = document.querySelector("#tcorpo");
 const btFechar = document.querySelector("#btFechar");
 const detalhes = document.querySelector("#detalhes");
 const addCarrinho = document.querySelector("#addCarrinho");
-const nome = document.querySelector("#nome");
-const preco = document.querySelector("#preco");
-const pedidos = [];
 
-function preecherTabela() {
+function preencherTabela() {
     cardapio.forEach((e, i) => {
         const linha = document.createElement("tr");
         const id = document.createElement("td");
@@ -14,8 +11,11 @@ function preecherTabela() {
         const preco = document.createElement("td")
         const detalhes = document.createElement("td");
         id.innerHTML = e.id;
+        id.id = "id"
         nome.innerHTML = e.nome;
+        nome.id = "nome"
         preco.innerHTML = e.preco
+        preco.id = "preco"
         detalhes.innerHTML = `<button onclick="abrirModal('${i}')">Ver detalhes</button>`;
         linha.appendChild(id);
         linha.appendChild(nome);
@@ -35,14 +35,20 @@ function abrirModal(i){
       document.querySelector("#nome").innerHTML = `Sabor: ${cardapio[i].nome}`;
       document.querySelector("#descricao").innerHTML = `Ingredientes: ${cardapio[i].descricao}`;
       document.querySelector("#preco").innerHTML = `Valor: ${cardapio[i].preco}`;
+      window.scrollTo(0, 0);
 }
 
-function addCarrinho(){
-   let pedido = {
-      "nome": nome.innerHTML,
-      "preco": preco.innerHTML
-   }
-   pedidos.push(pedido)
-   console.log(pedidos)
+function adicionar(){
+    const confirma = confirm("Adicionar ao carrinho?")
+    if(confirma == true){
+        const item = {
+            id : document.querySelector("#id").innerHTML,
+            nome: document.querySelector("#nome").innerHTML,
+            preco: document.querySelector("#preco").innerHTML
+        }
+        const produtos = JSON.parse(window.localStorage.getItem("produtos")) || []
+        produtos.push(item)
+        window.localStorage.setItem("produtos",JSON.stringify(produtos))
+        window.location.reload()
+    }
 }
-
