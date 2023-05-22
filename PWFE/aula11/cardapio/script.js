@@ -28,10 +28,10 @@ btFechar.addEventListener('click', () => {
 
 function abrirModal(i){
       detalhes.classList.toggle("oculto");
-      document.querySelector("#id").innerHTML = `ID: ${cardapio[i].id}`;
-      document.querySelector("#nome").innerHTML = `Sabor: ${cardapio[i].nome}`;
-      document.querySelector("#descricao").innerHTML = `Ingredientes: ${cardapio[i].descricao}`;
-      document.querySelector("#preco").innerHTML = `Valor: ${cardapio[i].preco}`;
+      document.querySelector("#id").innerHTML = cardapio[i].id;
+      document.querySelector("#nome").innerHTML = cardapio[i].nome;
+      document.querySelector("#descricao").innerHTML = cardapio[i].descricao;
+      document.querySelector("#preco").innerHTML = cardapio[i].preco;
       window.scrollTo(0, 0);
 }
 

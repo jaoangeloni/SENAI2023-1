@@ -139,3 +139,15 @@ td{
     padding: 10px;
     border-radius: 5px;
 }
+
+#enviar{
+    margin: 10px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    background-color: #ff3e3e ; 
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}

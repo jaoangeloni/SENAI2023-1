@@ -27,17 +27,19 @@
                 <h1 id="main-title">Carrinho</h1>
                 <thead>
                     <tr>
-                        <th>Seus pedidos</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>ID</th>
+                        <th>Sabor</th>
+                        <th>Valor</th>
+                        <th>Remover pedido</th>
                     </tr>
                 </thead>
                 <tbody id="tcorpo">
                 </tbody>
             </table>
-            <button onclick="limparDados()" id="limpar">Limpar carrinho</button>
+            <div>
+                <button onclick="enviarDados()" id="enviar">Realizar compra</button>
+                <button onclick="limparDados()" id="limpar">Limpar carrinho</button>
+            </div>
         </div>    
     </main>
 </body>

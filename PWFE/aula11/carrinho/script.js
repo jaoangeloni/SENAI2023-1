@@ -8,42 +8,21 @@ function preencherTabela() {
         const id = document.createElement("td");
         const nome = document.createElement("td");
         const preco = document.createElement("td");
-        const enviar = document.createElement("td")
         const remover = document.createElement("td")
         id.innerHTML = e.id;
         nome.innerHTML = e.nome;
         preco.innerHTML = e.preco;
-        enviar.innerHTML = `<button onclick="enviarPedido('${i}')">Confirmar pedido</button>`;
-        remover.innerHTML = `<button onclick="removerItem('${i}')">Remover pedido</button>`;
+        remover.innerHTML = `<button onclick="removerItem('${i}')">Remover</button>`;
         linha.appendChild(id);
         linha.appendChild(nome);
         linha.appendChild(preco);
-        linha.appendChild(enviar);
         linha.appendChild(remover);
         tcorpo.appendChild(linha)
     })
 }
 
-function enviarPedido(i) {
-    const confirma = confirm("Enviar pedido?")
-    if (confirma == true){
-        const item = {
-            id :produtos[i].id,
-            nome: produtos[i].nome,
-            preco: produtos[i].preco
-        }
-        const pedidos = JSON.parse(window.localStorage.getItem("pedidos")) || []
-        pedidos.push(item)
-        window.localStorage.setItem("pedidos",JSON.stringify(pedidos))
-
-        produtos.splice(i, 1)
-        window.localStorage.setItem("produtos",JSON.stringify(produtos))
-        window.location.reload()
-    }
-}
-
 function limparDados(){
-    const confirma = confirm("Limpar carrinho completo?")
+    let confirma = confirm("Limpar carrinho?")
     if (confirma == true){
         window.localStorage.removeItem("produtos");
         window.location.reload();
@@ -51,10 +30,26 @@ function limparDados(){
 }
 
 function removerItem(i){
-    const confirma = confirm("Excluir do carrinho?")
+    let confirma = confirm("Excluir do carrinho?")
     if (confirma == true){
         produtos.splice(i, 1)
         window.localStorage.setItem("produtos",JSON.stringify(produtos))
+        window.location.reload()
+    }
+}
+
+
+function enviarDados(){
+    let confirma = confirm("Realizar compra?")
+    if (confirma == true){
+        const pedido = {
+            data: new Date().toLocaleDateString(),
+            produtos: produtos
+        }
+        pedidos = JSON.parse(window.localStorage.getItem("pedidos")) || []
+        pedidos.push(pedido)
+        window.localStorage.setItem("pedidos",JSON.stringify(pedidos))
+        window.localStorage.removeItem("produtos");
         window.location.reload()
     }
 }
