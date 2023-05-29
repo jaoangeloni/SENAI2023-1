@@ -10,21 +10,7 @@ import {
     Platform
 } from "react-native"
 
-
-//mesmo que array = [1,2,3] até 10...
-const array = Array.from({length: 10}, (_, i) => i + 1);
-
-const precos = []
-
-const enviarPrecoCarrinho = (preco) => {
-    precos.push(Number(preco))
-    window.localStorage.setItem("precos", precos)
-}
-
-//funcao que gera valor aleatorio de 0 a 100
-const gerarPrecoAleatorio = () => {
-    return Math.floor(Math.random()*100)
-}
+import Usuarios from '../usuarios.js'
 
 export default function Destaques() {
 
@@ -32,7 +18,7 @@ export default function Destaques() {
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView}>
                 <Text style={styles.title}>
-                    DESTAQUES
+                    USUÁRIOS
                 </Text>
                 <FlatList
                     data={array}
@@ -47,7 +33,7 @@ export default function Destaques() {
                                     style={styles.imageProduto}
                                 />
                                 <Text style={styles.textProduto}>Produto</Text>
-                                <Text style={styles.textProduto}>R${20}.00</Text>
+                                <Text style={styles.textProduto}>R${preco}.00</Text>
                             </TouchableOpacity>
                         )
                     }}
@@ -56,13 +42,6 @@ export default function Destaques() {
         </SafeAreaView>
     )
 }
-
-// if(Platform.OS === 'android') {
-//     statusBarHeight
-// }
-// else {
-//     25
-// }
 
 const styles = StyleSheet.create({
     container: {
