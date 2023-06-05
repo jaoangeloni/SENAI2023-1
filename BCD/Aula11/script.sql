@@ -132,3 +132,14 @@ ON s.Num_Sol = i.Num_Sol
 INNER JOIN Produtos p 
 ON i.Cod_Produto = p.Cod_Produto
 ORDER BY s.Num_Sol DESC;
+
+--Procedimento
+DROP PROCEDURE IF EXISTS solicita_um_item;
+    DELIMITER $
+    CREATE PROCEDURE solicita_um_item(n_sol NUMERIC(4), depto NUMERIC(4),func NUMERIC(4), prod NUMERIC(4), qtd NUMERIC(4), total NUMERIC(12,2))
+    BEGIN
+        INSERT INTO Solicitacoes (Num_Sol, Data_sol, Cod_Depto, Cod_Func)
+        VALUES (n_sol, CURDATE(), depto, func);
+        INSERT INTO Itens_Solicitacao (Num_Sol, Cod_Produto, Qtde, Valor)
+        VALUES (n_sol, prod, qtd, total);
+    END $
