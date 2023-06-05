@@ -118,3 +118,17 @@ ON p.Cod_Produto = i.Cod_Produto
 INNER JOIN Solicitacoes s 
 ON i.Num_Sol = s.Num_Sol
 WHERE YEAR(s.Data_sol) = 2018 AND MONTH(s.Data_sol) = 2;
+
+--View
+DROP VIEW IF EXISTS vw;
+CREATE VIEW vw AS
+SELECT s.Num_Sol, s.Data_sol, s.Cod_Depto, d.Nome_Depto, s.Cod_Func, f.Nome_Func, i.Cod_Produto, p.Nome_Produto, i.Qtde, i.Valor FROM Solicitacoes s
+INNER JOIN Departamentos d 
+ON s.Cod_Depto = d.Cod_Depto
+INNER JOIN Funcionarios f 
+ON s.Cod_Func = f.Cod_Func
+INNER JOIN Itens_Solicitacao i 
+ON s.Num_Sol = i.Num_Sol
+INNER JOIN Produtos p 
+ON i.Cod_Produto = p.Cod_Produto
+ORDER BY s.Num_Sol DESC;
