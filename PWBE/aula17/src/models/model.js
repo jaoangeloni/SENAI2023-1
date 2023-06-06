@@ -21,6 +21,9 @@ class Usuario {
             return `SELECT id, nome, email, nascimento, cpf, endereco, telefone FROM usuario WHERE id = ${this.id}`
     }
 
+    alterar() {
+        return ``
+    }
 }
 
 module.exports = Usuario 
