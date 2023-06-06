@@ -25,7 +25,7 @@ const autenticar = (req, res) => {
             }else {    
                 res.json(modelarLista(result)).end()
             }
-        }else {
+        }else{
             res.status(401).json(err).end();
         }
     })
@@ -33,5 +33,5 @@ const autenticar = (req, res) => {
 
 module.exports = {
     listar,
-    autenticar,
+    autenticar
 }
