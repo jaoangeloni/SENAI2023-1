@@ -20,11 +20,10 @@ function autenticar() {
     .then(resp => resp.json())
     .then(resp => {
         if(resp.length != 0){
-            window.localStorage.setItem('Dados', JSON.stringify(resp))
+            window.localStorage.setItem('Dados', JSON.stringify(resp));
             window.location.href= "./home.html";
-        }
-        else{
-            alert("Usuário não encontrado")
+        }else{
+            alert("Usuário não encontrado");
         }
     })
 }

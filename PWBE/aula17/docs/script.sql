@@ -14,4 +14,4 @@ CREATE TABLE usuario(
 );
 
 INSERT INTO usuario VALUES
-("","Marquinho Ruindade Pura", "marquinho@ruindade.com", "ruindade123", "2005-03-16", "44741604870", "Rua da ruindade, 666", "19997962255, 19997963366");
+("","Marquinho Ruindade Pura", "marquinho@ruindade.com", password("ruindade123"), "2005-03-16", "44741604870", "Rua da ruindade, 666", "19997962255, 19997963366");

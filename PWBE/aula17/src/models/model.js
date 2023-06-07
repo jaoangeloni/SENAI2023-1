@@ -11,7 +11,7 @@ class Usuario {
     }
 
     autenticar() {
-        return `SELECT id, nome, email, nascimento, cpf, endereco, telefone FROM usuario WHERE email = '${this.email}' AND senha = '${this.senha}'`
+        return `SELECT id, nome, email, nascimento, cpf, endereco, telefone FROM usuario WHERE email = '${this.email}' AND senha = passoword('${this.senha}')`
     }
 
     listar() {
