@@ -22,7 +22,7 @@ class Usuario {
     }
 
     alterar() {
-        return `UPDATE usuario SET nome = '${this.nome}', email = '${this.email}', endereco = '${this.endereco}', telefone = '${this.telefone}' WHERE id = ${this.id}`
+        return `UPDATE usuario SET nome = '${this.nome}', email = '${this.email}', senha = PASSWORD('${this.senha}'), endereco = '${this.endereco}', telefone = '${this.telefone}' WHERE id = ${this.id}`
     }
 
 }
