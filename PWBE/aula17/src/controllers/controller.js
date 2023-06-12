@@ -31,7 +31,19 @@ const autenticar = (req, res) => {
     })
 }
 
+const alterar = (req, res) => {
+    let usuario = new Usuario (req.body)
+    con.query(usuario.alterar(), (err, result) => {
+        if (result.affectedRows != 0)
+            res.status(202).end()       
+        else
+            res.status(404).end()
+    })
+}
+
+
 module.exports = {
     listar,
-    autenticar
+    autenticar,
+    alterar,
 }

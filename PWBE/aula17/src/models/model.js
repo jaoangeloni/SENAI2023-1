@@ -22,8 +22,9 @@ class Usuario {
     }
 
     alterar() {
-        return ``
+        return `UPDATE usuario SET nome = '${this.nome}', email = '${this.email}', endereco = '${this.endereco}', telefone = '${this.telefone}' WHERE id = ${this.id}`
     }
+
 }
 
-module.exports = Usuario 
+module.exports = Usuario
