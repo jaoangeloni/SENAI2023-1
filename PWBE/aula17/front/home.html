@@ -7,18 +7,30 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <main>
-        <div id="card">
-            <p class="title">Perfil</p>
-            <img src="" id="img">
-            <p id="pnome"></p>
-            <p id="pemail"></p>
-            <p id="pid"></p>
-            <p id="pcpf"></p>
-            <p id="pnascimento"></p>
-        </div>
+<body onload="carregar()">
+    <main id="mainHome">
+        <form id="perfil">
+            <label for="id">Id:</label>
+            <input type="number" name="id" id="id" disabled>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome">
+            <label for="cpf">CPF:</label>
+            <input type="text" name="cpf" id="cpf">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+            <label for="nascimento">Data de Nascimento:</label>
+            <input type="date" name="nascimento" id="nascimento">
+            <label for="complemento">Endereço:</label>
+            <input type="text" name="endereco" id="endereco">
+            <label for="telefones">Telefones:</label>
+            <input name="telefones" id="telefones"></input>
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" id="senha">
+            <label for="confirmacao">Confirmação de Senha:</label>
+            <input type="password" name="confirmacao" id="confirmacao">
+            <button type="submit">Salvar</button>
+        </form>
     </main>
 </body>
-<script src="./script.js"></script>
+<script src="./home.js"></script>
 </html>
