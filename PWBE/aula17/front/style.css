@@ -23,13 +23,13 @@ main{
     height: 500px;
     padding: 50px;
     justify-content: space-evenly;
-    background: linear-gradient(to right bottom,#ff7700, #fff );
+    border: 3px solid #ff1749;
     border-radius: 10px;
     align-items: center;
 }
 .title{
     font-size: 2rem;
-    color: black;
+    color: #ff1749;
 }
 input{
     padding: 8px; 
@@ -37,29 +37,40 @@ input{
 }
 
 button{
-    padding: 8px;
-    width: 200px;  
+    padding: 10px;
+    width: 200px;
+    background-color: #ff1749;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
-#card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    background: linear-gradient(to right bottom,#ff7700, #fff );
-    height: 600px;
-    padding: 20px;
+input{
+    border: 2px solid #ff1749;
     border-radius: 5px;
-    width: 400px;
 }
-#card img{
-    border-radius: 200px;
-    width: 250px;
-}
-
 #perfil{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    border: 2px solid #ff1749;
+    padding: 40px 100px;
+    border-radius: 10px;
+}
+#sair{
+    background: none;
+    margin: 5px;
+    border: 2px solid #ff1749;
+    color: #ff1749;
+}
+#mainHome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.disabled{
+    border: #a0a0a0 2px solid;
 }

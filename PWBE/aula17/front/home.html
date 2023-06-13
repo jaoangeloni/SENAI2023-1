@@ -9,15 +9,16 @@
 </head>
 <body onload="carregar()">
     <main id="mainHome">
+        <div class="title">Editar perfil</div>
         <form id="perfil">
             <label for="id">Id:</label>
-            <input type="number" name="id" id="id" disabled>
+            <input type="number" name="id" id="id" disabled class="disabled">
 
             <label for="cpf">CPF:</label>
-            <input type="text" name="cpf" id="cpf" disabled> 
+            <input type="text" name="cpf" id="cpf" disabled class="disabled"> 
 
             <label for="nascimento">Data de Nascimento:</label>
-            <input type="date" name="nascimento" id="nascimento" disabled>
+            <input type="date" name="nascimento" id="nascimento" disabled class="disabled">
 
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome">
@@ -37,8 +38,10 @@
             <label for="confirmacao">Confirmação de Senha:</label>
             <input type="password" name="confirmacao" id="confirmacao">
             
-            <button type="submit" id="enviar"">Submit</button>
+            <button type="submit" id="enviar"">Alterar perfil</button>   
         </form>
+
+        <button onclick="logoff()" id="sair">LogOff</button>
     </main>
 </body>
 <script src="./home.js"></script>

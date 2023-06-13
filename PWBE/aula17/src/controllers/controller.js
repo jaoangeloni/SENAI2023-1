@@ -21,7 +21,7 @@ const autenticar = (req, res) => {
     con.query(usuario.autenticar(), (err, result) => {
         if(err == undefined){
             if(result.length == 0) {
-                res.status(401).json({"msg":"Email ou Senha Invalidos"}).end();
+                res.status(401).end();
             }else {    
                 res.json(modelarLista(result)).end()
             }

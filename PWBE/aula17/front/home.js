@@ -1,7 +1,12 @@
 const uri = 'http://localhost:3000'
 const perfil = document.querySelector("#perfil");
 
-function carregar() {
+function logoff(){
+    window.localStorage.removeItem("Dados");
+    window.location.href = "./login.html";
+}
+
+function carregar(){
     let dados = JSON.parse(localStorage.getItem("Dados"));
     perfil.id.value = dados[0].id;
     perfil.nome.value = dados[0].nome;
@@ -42,12 +47,13 @@ perfil.addEventListener("submit", function(e){
         .then((resp) => {
             alert("Dados Alterados")
         })
+        
         fetch(uri + '/listar')
         .then(resp => resp.json())
         .then(resp => {
             if(resp.length != 0){
-                localStorage.removeItem("Dados")
-                window.localStorage.setItem('Dados', JSON.stringify(resp));
+                // localStorage.removeItem("Dados")
+                // window.localStorage.setItem("Dados", JSON.stringify(resp));
                 window.location.reload()
             }
         })
