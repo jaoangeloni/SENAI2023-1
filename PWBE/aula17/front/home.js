@@ -48,14 +48,16 @@ perfil.addEventListener("submit", function(e){
             alert("Dados Alterados")
         })
         
-        fetch(uri + '/listar')
-        .then(resp => resp.json())
-        .then(resp => {
-            if(resp.length != 0){
-                // localStorage.removeItem("Dados")
-                // window.localStorage.setItem("Dados", JSON.stringify(resp));
-                window.location.reload()
-            }
-        })
+        setTimeout(() => {
+            fetch(uri + '/listar')
+            .then(resp => resp.json())
+            .then(resp => {
+                if(resp.length != 0){
+                    window.localStorage.removeItem('Dados');
+                    window.localStorage.setItem('Dados', JSON.stringify(resp));
+                    window.location.reload()
+                }
+            })
+        },1000)
     }
 })
