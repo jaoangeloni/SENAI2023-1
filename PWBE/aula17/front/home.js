@@ -49,7 +49,7 @@ perfil.addEventListener("submit", function(e){
         })
         
         setTimeout(() => {
-            fetch(uri + '/listar/')
+            fetch(uri + '/listar/' + perfil.id.value)
             .then(resp => resp.json())
             .then(resp => {
                 if(resp.length != 0){
