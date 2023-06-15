@@ -1,12 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 
-export default function MainScreen() {
+export default function MainScreen({ navigation }) {
+
+    const abrirPerguntas = () => {
+        navigation.navigate('PerguntasScreen');
+    }
+
   return (
     <View style={styles.container}>
-      <Text>Quiz - Astronomia</Text>
-      <StatusBar style="auto" />
-      <TouchableOpacity></TouchableOpacity>
+        <Text>Quiz - Astronomia</Text>
+        <TouchableOpacity style={styles.botao} onPress = {() => abrirPerguntas()}>
+            <Text> Iniciar </Text>
+        </TouchableOpacity>
     </View>
   );
 }
