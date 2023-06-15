@@ -9,7 +9,7 @@ const Perguntas = [
         ]
     },
     {
-        pergunta2:"Qual é o evento cósmico que ocorre quando uma estrela massiva colapsa sob sua própria gravidade?",
+        pergunta:"Qual é o evento cósmico que ocorre quando uma estrela massiva colapsa sob sua própria gravidade?",
         alternativas:[
             {resp:"Supernova", status:true},
             {resp:"Buraco negro", status:false},
@@ -18,7 +18,7 @@ const Perguntas = [
         ]
     },
     {
-        pergunta3:"Qual é a velocidade da luz no vácuo?",
+        pergunta:"Qual é a velocidade da luz no vácuo?",
         alternativas:[
             {resp:"300.000 km/h", status:false},
             {resp:"300.000 km/s", status:true},
@@ -27,7 +27,7 @@ const Perguntas = [
         ]
     },
     {
-        pergunta4:"Qual é o maior satélite natural do sistema solar?",
+        pergunta:"Qual é o maior satélite natural do sistema solar?",
         alternativas:[
             {resp:"Ganimedes (lua de Júpiter)", status:false},
             {resp:"Titã (lua de Saturno)", status:true},
@@ -36,7 +36,7 @@ const Perguntas = [
         ]
     },
     {
-        pergunta5:"Qual é a teoria que descreve a curvatura do espaço-tempo causada por massas e energias?",
+        pergunta:"Qual é a teoria que descreve a curvatura do espaço-tempo causada por massas e energias?",
         alternativas:[
             {resp:"Teoria da Relatividade Geral", status:true},
             {resp:"Teoria da Gravidade Quântica", status:false},
@@ -45,7 +45,7 @@ const Perguntas = [
         ]
     },
     {
-        pergunta6:"Qual é a estrela mais próxima do Sol, após Proxima Centauri?",
+        pergunta:"Qual é a estrela mais próxima do Sol, após Proxima Centauri?",
         alternativas:[
             {resp:"Barnard's Star", status:true},
             {resp:"Wolf 359", status:false},
@@ -55,4 +55,4 @@ const Perguntas = [
     },
 ]
 
-export default Perguntas
+export default Perguntas;

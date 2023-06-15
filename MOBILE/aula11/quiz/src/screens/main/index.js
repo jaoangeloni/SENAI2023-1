@@ -9,9 +9,9 @@ export default function MainScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-        <Text>Quiz - Astronomia</Text>
+        <Text style={styles.titulo}>Quiz - Astronomia</Text>
         <TouchableOpacity style={styles.botao} onPress = {() => abrirPerguntas()}>
-            <Text> Iniciar </Text>
+            <Text style={styles.textoBotao}> Iniciar </Text>
         </TouchableOpacity>
     </View>
   );
@@ -25,4 +25,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    botao: {
+        margin: 50,
+        backgroundColor : "#826ade",
+        padding: 10,
+        borderRadius: 50
+    },
+    titulo: {
+        fontSize: "2rem",
+        fontWeight: 'bold'
+    },
+    textoBotao: {
+        fontSize: "1.5rem",
+        color: "#fff",
+    }
 });
