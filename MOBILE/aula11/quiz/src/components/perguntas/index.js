@@ -4,6 +4,7 @@ import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 export default function pergunta({ item }) {
     var contadorAcertou = 0;
     var contadorErrou = 0;
+    
 
     const Verificar = (alternativas, indice) => {
         if(alternativas[indice].status === false){

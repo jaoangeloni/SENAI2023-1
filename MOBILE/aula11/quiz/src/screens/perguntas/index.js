@@ -1,42 +1,51 @@
+import React, { useState } from 'react';
 import { Text, View, FlatList, TouchableOpacity } from 'react-native';
-import Pergunta from '../../components/perguntas'
-import Mock from '../../mocks/mock'
+import Mock from '../../mocks/mock';
 
 export default function PerguntasScreen({ navigation, route }) {
-  var contadorAcertou = 0;
-  var contadorErrou = 0;
+  const [indice, setIndice] = useState(0);
+  const [contadorAcertou, setContadorAcertou] = useState(0);
+  const [contadorErrou, setContadorErrou] = useState(0);
 
-  const Verificar = (alternativas, indice) => {
-    if(alternativas[indice].status === false){
-        alert("Errou");
-        contadorErrou ++;
-        indice ++
+  const avancarParaProximaPergunta = () => {
+    setIndice(indice + 1);
+  };
+
+  const verificarResposta = (status) => {
+    if (status === false) {
+      alert('Errou');
+      setContadorErrou(contadorErrou + 1);
+    } else {
+      alert('Acertou');
+      setContadorAcertou(contadorAcertou + 1);
     }
-    else{
-        alert("Acertou");
-        contadorAcertou ++;
-        indice++
-    }
-  }
+
+    avancarParaProximaPergunta();
+  };
   
-  const indice = 0;
-  
-  const pergunta = Mock[indice].pergunta;
-
-  const alternativas = pergunta.alternativas;
-
-  console.log(pergunta)
-
+  const perguntaAtual = Mock[indice].pergunta;
+  const alternativas = Mock[indice].alternativas;
+      
   return (
     <View style={styles.container}>
-      <Text>{pergunta}</Text>
-      <TouchableOpacity style={styles.resposta} onPress={() => Verificar(alternativas, 0)}><Text style={styles.alternativa}>{item.alternativas[0].resp}</Text></TouchableOpacity>
-      <TouchableOpacity style={styles.resposta} onPress={() => Verificar(alternativas, 1)}><Text style={styles.alternativa}>{item.alternativas[1].resp}</Text></TouchableOpacity>
-      <TouchableOpacity style={styles.resposta} onPress={() => Verificar(alternativas, 2)}><Text style={styles.alternativa}>{item.alternativas[2].resp}</Text></TouchableOpacity>
-      <TouchableOpacity style={styles.resposta} onPress={() => Verificar(alternativas, 3)}><Text style={styles.alternativa}>{item.alternativas[3].resp}</Text></TouchableOpacity>
+      <Text>{perguntaAtual}</Text>
+      <TouchableOpacity style={styles.resposta} onPress={() => verificarResposta(alternativas[0].status)}>
+        <Text style={styles.alternativa}>{alternativas[0].resp}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.resposta} onPress={() => verificarResposta(alternativas[1].status)}>
+        <Text style={styles.alternativa}>{alternativas[1].resp}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.resposta} onPress={() => verificarResposta(alternativas[2].status)}>
+        <Text style={styles.alternativa}>{alternativas[2].resp}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.resposta} onPress={() => verificarResposta(alternativas[3].status)}>
+        <Text style={styles.alternativa}>{alternativas[3].resp}</Text>
+      </TouchableOpacity>
+
     </View>
   );
 }
+
 
 import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
@@ -45,5 +54,20 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+    },    
+    pergunta: {
+      fontSize: 16,
+      backgroundColor: "#d6d6d6",
+      padding: 10
     },
+    alternativa: {
+      fontSize: 16,
+      margin: 8,
+      fontStyle: "italic"
+    },
+    resposta:{
+      padding: 5,
+      borderBottomWidth: "1px",
+      borderBottomColor: "#d6d6d6"
+    }
 });
