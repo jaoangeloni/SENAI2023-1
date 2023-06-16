@@ -1,16 +1,32 @@
 import React, { useState } from 'react';
-import { Text, View, FlatList, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import Mock from '../../mocks/mock';
 
 export default function PerguntasScreen({ navigation, route }) {
   const [indice, setIndice] = useState(0);
   const [contadorAcertou, setContadorAcertou] = useState(0);
   const [contadorErrou, setContadorErrou] = useState(0);
+  
+  const abrirResultados = () => {
+    return navigation.navigate('ResultadosScreen', {
+      contadorAcertou: contadorAcertou,
+      contadorErrou: contadorErrou,
+    });
+  } 
+
+  if (indice >= Mock.length) {
+    return (
+      <View style={styles.container}>
+        <Text>Fim das perguntas</Text>
+        <TouchableOpacity onPress={() => abrirResultados()}><Text>Ver resultados</Text></TouchableOpacity>
+      </View>
+    );
+  }
 
   const avancarParaProximaPergunta = () => {
     setIndice(indice + 1);
   };
-
+  
   const verificarResposta = (status) => {
     if (status === false) {
       alert('Errou');
@@ -19,10 +35,10 @@ export default function PerguntasScreen({ navigation, route }) {
       alert('Acertou');
       setContadorAcertou(contadorAcertou + 1);
     }
-
     avancarParaProximaPergunta();
   };
-  
+    
+
   const perguntaAtual = Mock[indice].pergunta;
   const alternativas = Mock[indice].alternativas;
       

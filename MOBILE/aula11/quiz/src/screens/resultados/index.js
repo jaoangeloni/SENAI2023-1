@@ -1,9 +1,25 @@
-import { Text, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 
-export default function ResultadosScreen() {
+export default function ResultadosScreen({ route }) {
+  const { contadorAcertou, contadorErrou } = route.params;
+  var resultado = ""
+
+  const reiniciar =() => {
+    window.location.reload()
+  }
+
+  if(contadorAcertou >= 4)
+    resultado = "Aprovado"
+  else
+    resultado = "reprovado"
+
   return (
     <View style={styles.container}>
-      <Text>Resultados</Text>
+      <Text style={styles.titulo}>Resultados:</Text>
+      <Text style={styles.texto}>Acertos: {contadorAcertou}</Text>
+      <Text style={styles.texto}>Erros: {contadorErrou}</Text>
+      <Text style={styles.resultado}>{resultado}</Text>
+      <TouchableOpacity onPress={() => reiniciar()}><Text>Reiniciar</Text></TouchableOpacity>
     </View>
   );
 }
